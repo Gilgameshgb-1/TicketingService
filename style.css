@@ -40,16 +40,30 @@ nav {
   }
   nav .dropdown-content a {
     float: none;
-    color: black;
+    color: rgb(248, 248, 248);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
   }
-  nav .dropdown-content a:hover {
-    background-color: #ddd;
+  nav .right {
+    float: right; /* float the right-side categories to the right */
+  }
+  /* Style the "The Name of the Website" category */
+  nav .title {
+    font-size: 16px; /* increase the font size */
+    font-family: "Courier New", Courier, monospace; /* change the font family */
+    color: #f01035; /* change the font color */
+  }
+  /* Add specific rules for the dropdown menu */
+  nav .dropdown-content {
+    font-size: 16px; /* set the font size for the dropdown menu */
+    color: rgb(255, 255, 255); /* set the font color for the dropdown menu */
+    font-family: Arial, sans-serif; /* set the font family for the dropdown menu */
   }
   nav .dropdown:hover .dropdown-content {
     display: block;
+    left: auto;
+    background-color: #333; /* set the background color for the dropdown menu when hovered over */
+    color: #ffffff; /* set the font color for the dropdown menu when hovered over */
   }
-  
