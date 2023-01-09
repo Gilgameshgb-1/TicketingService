@@ -1,0 +1,87 @@
+.event-container {
+  float: right; /* position element on the right side of the page */
+  width: 40%; /* specify a width for the element */
+  padding: 20px;
+}
+
+.event-name {
+  margin: 0;
+  font-size: 24px;
+}
+
+.event-details {
+  font-size: 14px;
+  color: #333;
+  margin: 10px 0;
+}
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  font-size: 14px;
+  color: #333;
+  margin: 10px 0;
+}
+
+#map {
+  width: 509px;
+  height: 400px;
+  /* background-color: #eee; */
+}
+
+.left-container {
+  float: left; /* position element on the left side of the page */
+  width: 35%; /* specify a width for the element */
+  padding: 60px;
+  text-align: center;
+}
+
+#time {
+  font-size: 14px;
+  color: #333;
+  margin: 10px 0;
+}
+
+#progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #00cc00;
+  margin: 10px 0;
+  margin-bottom: 100px;
+}
+
+.name-container {
+  clear: both; /* clear floats */
+  text-align: left;
+}
+
+#name {
+  font-size: 28px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.add-card-container {
+  text-align: left;
+  margin: 20px 0;
+}
+.card-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.add-card-button {
+  display: inline-block;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 8px 12px;
+}

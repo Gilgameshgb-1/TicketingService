@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!-- Load Leaflet JS -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../TicketingService/style.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="title">Events.ba</a>
+      <a href="#">Concerts</a>
+      <a href="#">Sports</a>
+      <div class="dropdown">
+        <button class="dropbtn">
+          More
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Standup comedy</a>
+          <a href="#">Shows</a>
+          <a href="#">Cinema</a>
+        </div>
+      </div>
+      <a href="#" class="right"
+        ><img src="../user-icon.png" alt="User Icon" height="14" width="14"
+      /></a>
+      <a href="Help\Help.html" class="right">Help</a>
+      <a href="#" class="right">Actions</a>
+    </nav>
+    <div class="event-container">
+      <h1 class="event-name">The Name of the Event</h1>
+      <p class="event-details">Date, Time, Location</p>
+      <div><img src="venue.jpg" /></div>
+      <ul class="item-list">
+        <li class="item">Name Type Number</li>
+        <li class="item">Name Type Number</li>
+        <li class="item">Name Type Number</li>
+      </ul>
+      <div id="map">Map</div>
+    </div>
+    <div class="left-container">
+      <p id="time"></p>
+      <div id="progress-bar"></div>
+      <div class="name-container">
+        <h3 id="name">Payment</h3>
+      </div>
+      <div class="add-card-container">
+        <div class="card-icon">
+          <img src="add.png" class="card-icon" alt="Card icon" />
+        </div>
+        <img src="icon-card.png" class="card-icon" alt="Card icon" />
+        <a href="#" class="add-card-button">Add New Card</a>
+      </div>
+    </div>
+    <script src="map.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
