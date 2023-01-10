@@ -1,7 +1,21 @@
+.container {
+  display: flex; /* use flexbox to layout the child elements */
+}
+
+.left-section,
+.right-section {
+  flex-basis: 50%; /* initial size of each child element is 50% of the container */
+}
+
+.bottom-section {
+  flex: 1;
+}
+
 .event-container {
   float: right; /* position element on the right side of the page */
-  width: 40%; /* specify a width for the element */
-  padding: 20px;
+  width: 40%; 
+  /* height: 100%;
+  padding: 20px; */
 }
 
 .event-name {
@@ -27,8 +41,8 @@
 }
 
 #map {
-  width: 509px;
-  height: 400px;
+  width: 68%;
+  height: 50%;
   /* background-color: #eee; */
 }
 
@@ -37,6 +51,7 @@
   width: 35%; /* specify a width for the element */
   padding: 60px;
   text-align: center;
+  height: 100%;
 }
 
 #time {
@@ -84,4 +99,34 @@
   border: 1px solid #333;
   border-radius: 4px;
   padding: 8px 12px;
+}
+
+.green-button {
+  position: bottom;
+  margin: 0 auto;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.payment-container {
+  position: relative;
+}
+
+#button-card{
+  display:flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-direction: column;
+}
+
+body, html {
+  height: 100vh;
+}
+
+html {
+  height: -webkit-fill-available;
 }
