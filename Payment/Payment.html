@@ -42,30 +42,34 @@
       <a href="Help\Help.html" class="right">Help</a>
       <a href="#" class="right">Actions</a>
     </nav>
-    <div class="event-container">
-      <h1 class="event-name">The Name of the Event</h1>
-      <p class="event-details">Date, Time, Location</p>
-      <div><img src="venue.jpg" /></div>
-      <ul class="item-list">
-        <li class="item">Name Type Number</li>
-        <li class="item">Name Type Number</li>
-        <li class="item">Name Type Number</li>
-      </ul>
-      <div id="map">Map</div>
-    </div>
-    <div class="left-container">
-      <p id="time"></p>
-      <div id="progress-bar"></div>
-      <div class="name-container">
-        <h3 id="name">Payment</h3>
-      </div>
-      <div class="add-card-container">
-        <div class="card-icon">
-          <img src="add.png" class="card-icon" alt="Card icon" />
+    <div class="container">
+      <div class="left-section">
+        <p id="time"></p>
+        <div id="progress-bar"></div>
+        <div class="name-container">
+          <h3 id="name">Payment</h3>
         </div>
-        <img src="icon-card.png" class="card-icon" alt="Card icon" />
-        <a href="#" class="add-card-button">Add New Card</a>
+        <div id = "button-card">
+          <div class="add-card-container">
+            <div class="card-icon">
+              <img src="add.png" class="card-icon" alt="Card icon" />
+            </div>
+            <img src="icon-card.png" class="card-icon" alt="Card icon" />
+            <a href="#" class="add-card-button">Add New Card</a>
+          </div>
+        </div>
       </div>
+      <div class="right-section">
+        <h1 class="event-name">The Name of the Event</h1>
+        <p class="event-details">Date, Time, Location</p>
+        <div><img src="venue.jpg" /></div>
+        <ul class="item-list">
+          <li class="item">Name Type Number</li>
+          <li class="item">Name Type Number</li>
+          <li class="item">Name Type Number</li>
+        </ul>
+        <div id="map">Map</div>
+      </div>     
     </div>
     <script src="map.js"></script>
     <script src="main.js"></script>
