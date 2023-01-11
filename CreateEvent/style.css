@@ -1,15 +1,31 @@
-.form-container {
-  display: block;
+.container {
+  display: flex; /* use flexbox to layout the child elements */
 }
 
-.form-right-section {
-  flex: 1;
+.container form{
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-section{
+  flex-basis: 50%;
+  flex-direction: column;
+}
+.right-section {
+  flex-basis: 50%; /* initial size of each child element is 50% of the container */
+  flex-direction: column;
 }
 
 .add-item-category {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 10px;
+  width: 40%;
+  margin: auto;
 }
 
 .add-item-category label {
@@ -31,11 +47,37 @@
 .add-item-category label,
 .add-item-category input,
 .add-item-category button,
-#items-summary p,
-.form-bottom-section button {
-  display: block;
+#items-summary p{
+  padding: 10px;
   width: 40%;
-  margin-bottom: 20px;
-  padding-left: 20px;
-  margin-left: 20px;
+  margin: auto;
+}
+
+
+.form-bottom-section{
+  height: 150px;
+}
+
+.form-bottom-section button {
+  margin: 50px auto;
+  background-color: rgb(42, 216, 42);
+  display: block;
+  width: 20%;
+  height: 20%;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.form-container {
+  flex: 1;
+  /* additional styles for form container */
+}
+
+#add-item-category {
+  width:300px;
+  margin-top: 60px;
+  /* Add additional styles as needed */
 }
