@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="dataTransmitter.js"></script>
+    <script src="testData.js"></script>
+  </head>
+  <body>
+    <h1>Form Page</h1>
+    <form action="../GenerateQR/QRGen.html" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="surname">Surname:</label>
+      <input type="text" id="surname" name="surname" required />
+
+      <label for="venue">Venue:</label>
+      <input type="text" id="venue" name="venue" required />
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required />
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required />
+
+      <label for="id">Unique ID:</label>
+      <input type="text" id="id" name="id" required />
+
+      <label for="amount">Amount Paid:</label>
+      <input type="text" id="amount" name="amount" required />
+
+      <label for="payment">Payment Method:</label>
+      <input type="text" id="payment" name="payment" required />
+
+      <label for="reference">Transaction Reference Number:</label>
+      <input type="text" id="reference" name="reference" required />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
