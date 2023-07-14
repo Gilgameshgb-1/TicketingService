@@ -1,0 +1,24 @@
+{
+  "name": "ticketingservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gilgameshgb-1/TicketingService.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gilgameshgb-1/TicketingService/issues"
+  },
+  "homepage": "https://github.com/Gilgameshgb-1/TicketingService#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}
