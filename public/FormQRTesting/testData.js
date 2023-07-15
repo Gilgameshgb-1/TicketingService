@@ -1,8 +1,8 @@
 window.addEventListener("DOMContentLoaded", function () {
   // Populate form fields with test data
-  document.getElementById("name").value = "Faris";
-  document.getElementById("surname").value = "Bazdar";
-  document.getElementById("venue").value = "AG klub Sarajevo";
+  document.getElementById("name").value = "Cao";
+  document.getElementById("surname").value = "Kolegice";
+  document.getElementById("venue").value = "Selena";
   document.getElementById("time").value = "14:00";
   document.getElementById("date").value = "2023-07-09";
   document.getElementById("location").value = "Patriotske lige 30";
