@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", function () {
+/* window.addEventListener("DOMContentLoaded", function () {
   var formData = localStorage.getItem("formData");
   if (formData) {
     var formObject = JSON.parse(formData);
@@ -9,3 +9,4 @@ window.addEventListener("DOMContentLoaded", function () {
 
   localStorage.removeItem("formData"); // Optional: Clear the form data from localStorage
 });
+ */

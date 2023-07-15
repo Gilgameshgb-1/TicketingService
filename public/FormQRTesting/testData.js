@@ -12,5 +12,5 @@ window.addEventListener("DOMContentLoaded", function () {
   document.getElementById("reference").value = "ABC123";
 
   // Submit the form automatically
-  document.getElementById("myForm").submit();
+  //document.getElementById("myForm").submit();
 });
