@@ -1,19 +1,27 @@
 body {
   background-color: #f5f5f5;
-  font-family: Arial, sans-serif;
+  font-family: "Gilroy-Bold", sans-serif;
   text-align: center;
   margin: 0;
   padding: 20px;
 }
 
-h1 {
-  color: #333;
-  margin-bottom: 20px;
+.header-container {
+  text-align: center;
+}
+
+.header-text {
+  display: inline-block;
+  border-bottom: 5px dashed black;
+  padding-bottom: 5px; /* Adjust as needed to control the spacing between text and line */
+  font-family: "Gilroy Bold", sans-serif; /* Use the imported font */
+  font-size: 36px; /* Adjust as needed */
 }
 
 .qr-code-container {
-  max-width: 200px;
-  max-height: 450px;
+  display: flex;
+  width: 250px;
+  height: 480px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -27,9 +35,12 @@ h1 {
 }
 
 .qr-code-png {
-  display: flex;
   justify-content: center;
+  width: 180px;
+  border: 4px dashed black;
+  padding: 10px; /* Adjust as needed to control the spacing between the image and the dashed lines */
   margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .message {
@@ -37,9 +48,24 @@ h1 {
 }
 
 .brand-logo {
-  display: flex;
   justify-content: center;
   max-width: 200px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  margin-left: 15px;
+}
+
+.download-button {
+  border: 1px solid gray;
+  width: 200px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: Gilroy-Bold;
+  border-radius: 3px;
+}
+
+.download-button:link {
+  color: white;
 }

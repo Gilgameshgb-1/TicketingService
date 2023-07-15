@@ -3,15 +3,18 @@
   <head>
     <title>Thank You for Your Reservation</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   </head>
   <body>
-    <h1>Thank You for Your Reservation</h1>
+    <div class="header-container">
+      <h1 class="header-text">Thank You for Your Reservation</h1>
+    </div>
     <div class="qr-code-container">
       <div class="qr-code-png"></div>
+      <div src="brand-logo.svg" alt="Brand Logo" class="brand-logo"></div>
       <div class="qr-code"></div>
-      <div src="brand-logo.png" alt="Brand Logo" class="brand-logo">
       <p class="message">
         Thank you for making a reservation. Please scan the QR code below for
         your ticket details.

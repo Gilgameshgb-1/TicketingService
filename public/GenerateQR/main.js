@@ -1,5 +1,6 @@
 let btn = document.querySelector(".button");
 let qr_code_element = document.querySelector(".qr-code-png");
+let page_logo_brand = document.querySelector(".brand-logo");
 let qr_proprietary = document.querySelector(".qr-code");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -43,11 +44,11 @@ function generate(user_input) {
   });
 
   let brandLogo = document.createElement("img");
-  brandLogo.src = "brand-logo.png";
+  brandLogo.src = "brand-logo.svg";
   brandLogo.alt = "Brand Logo";
   brandLogo.classList.add("brand-logo");
 
-  qr_proprietary.appendChild(brandLogo);
+  page_logo_brand.appendChild(brandLogo);
 
   let download = document.createElement("button");
   qr_proprietary.appendChild(download);
@@ -55,9 +56,10 @@ function generate(user_input) {
   let download_link = document.createElement("a");
   download.appendChild(download_link);
   download.style.marginBottom = "10px";
-  console.log(download_link);
   download_link.setAttribute("download", "qr_code.png");
+  download_link.style.color = "white";
   download_link.innerHTML = `Download QR code`;
+  download.classList.add("download-button");
 
   let qr_code_img = document.querySelector(".qr-code-png");
   let qr_code_canvas = document.querySelector("canvas");
@@ -74,6 +76,7 @@ function generate(user_input) {
 
   let downloadPdfButton = document.createElement("button");
   downloadPdfButton.innerHTML = `Download PDF`;
+  downloadPdfButton.classList.add("download-button");
   qr_proprietary.appendChild(downloadPdfButton);
 
   downloadPdfButton.addEventListener("click", function () {
