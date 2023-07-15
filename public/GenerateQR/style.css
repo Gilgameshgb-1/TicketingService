@@ -12,6 +12,8 @@ h1 {
 }
 
 .qr-code-container {
+  max-width: 200px;
+  max-height: 450px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -20,9 +22,24 @@ h1 {
 }
 
 .qr-code {
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.qr-code-png {
+  display: flex;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
 .message {
   color: #666;
+}
+
+.brand-logo {
+  display: flex;
+  justify-content: center;
+  max-width: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
