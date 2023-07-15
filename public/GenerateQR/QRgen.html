@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Thank You for Your Reservation</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   </head>
   <body>
+    <h1>Thank You for Your Reservation</h1>
     <div class="qr-code-container">
-      <div class="qr-code" style></div>
+      <div class="qr-code"></div>
+      <p class="message">
+        Thank you for making a reservation. Please scan the QR code below for
+        your ticket details.
+      </p>
     </div>
     <script src="dataReceiver.js"></script>
     <script src="main.js"></script>

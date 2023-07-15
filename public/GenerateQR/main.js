@@ -63,7 +63,3 @@ function generate(user_input) {
     }, 300);
   }
 }
-
-generate({
-  value: "https://murtuzaalisurti.github.io/qr",
-});
