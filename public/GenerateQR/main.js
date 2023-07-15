@@ -57,7 +57,7 @@ function generate(user_input) {
   download.style.marginBottom = "10px";
   console.log(download_link);
   download_link.setAttribute("download", "qr_code.png");
-  download_link.innerHTML = `Download QR code <i class="fa-solid fa-download"></i>`;
+  download_link.innerHTML = `Download QR code`;
 
   let qr_code_img = document.querySelector(".qr-code-png");
   let qr_code_canvas = document.querySelector("canvas");
@@ -73,33 +73,70 @@ function generate(user_input) {
   }
 
   let downloadPdfButton = document.createElement("button");
-  downloadPdfButton.innerHTML = `Download PDF <i class="fa-solid fa-download"></i>`;
+  downloadPdfButton.innerHTML = `Download PDF`;
   qr_proprietary.appendChild(downloadPdfButton);
 
   downloadPdfButton.addEventListener("click", function () {
-    let pdf = new jsPDF();
-    pdf.text("QR Code", 10, 10);
+    console.log("Not fully functional yet!");
+    window.jsPDF = window.jspdf.jsPDF;
+    const doc = new jsPDF();
+
+    doc.text("Events.ba", 10, 10);
     if (qr_code_img.getAttribute("src") == null) {
-      pdf.addImage(qr_code_canvas.toDataURL(), "PNG", 10, 20, 180, 180);
+      doc.addImage(qr_code_canvas.toDataURL(), "PNG", 10, 20, 50, 50);
     } else {
-      pdf.addImage(qr_code_img.getAttribute("src"), "PNG", 10, 20, 180, 180);
+      doc.addImage(qr_code_img.getAttribute("src"), "PNG", 10, 20, 50, 50);
     }
-    pdf.save("qr_code.pdf");
+
+    const infoText = "Ticket information";
+    /*     const infoDetails =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."; */
+
+    // Set the font and size for the information text
+    doc.setFont("Helvetica", "bold");
+    doc.setFontSize(14);
+    doc.text(infoText, 10, 90);
+
+    // Picking up data, writing in .pdf ticket
+
+    const user_input = JSON.parse(localStorage.getItem("formDataObject")); //document.querySelector("#input_text");
+
+    arrOfInfo = [
+      user_input[0],
+      user_input[1],
+      user_input[2],
+      user_input[3] + " " + user_input[4],
+      user_input[5],
+      user_input[6],
+      user_input[7],
+      user_input[8],
+      user_input[9],
+    ];
+
+    doc.setFont("Helvetica", "normal");
+    doc.setFontSize(12);
+
+    const arrOfFields = [
+      "Name: ",
+      "Surname: ",
+      "Location: ",
+      "Time and Date: ",
+      "Address: ",
+      "User ID: ",
+      "paidAmount: ",
+      "paymentType: ",
+      "transactionNumber: ",
+    ];
+
+    for (let i = 0; i < 9; i++) {
+      doc.text(arrOfFields[i] + arrOfInfo[i], 10, 100 + i * 5);
+    }
+
+    // Set the font and size for the information details
+    /*     doc.setFont("Helvetica", "normal");
+    doc.setFontSize(12);
+    doc.text(infoDetails, 10, 130); */
+
+    const name = doc.save("qr_code.pdf");
   });
 }
-
-/* document.getElementById("downloadBtn").addEventListener("click", function () {
-  // Retrieve the ticket data
-  const ticketData = JSON.stringify(localStorage.getItem("formDataObject"));
-
-  // Create a new jsPDF instance
-  const doc = new jsPDF();
-
-  // Set the content of the PDF
-  doc.text("Ticket Data:", 10, 10);
-  doc.text(ticketData, 10, 20);
-
-  // Save the PDF as a file
-  doc.save("ticket.pdf");
-});
- */
