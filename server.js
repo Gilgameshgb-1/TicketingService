@@ -11,7 +11,7 @@ const formRoute = require("./routes/form");
 app.use(formRoute);
 
 // Start the server
-const port = 8081;
+const port = 80;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
