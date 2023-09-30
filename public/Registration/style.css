@@ -1,5 +1,5 @@
 body {
-  font-family: "Gilroy", Arial, sans-serif;
+  font-family: "Gilroy-Bold", sans-serif;
   background-color: #fff;
   color: #000;
 }
@@ -7,14 +7,27 @@ body {
 .container {
   max-width: 400px;
   margin: 0 auto;
+  margin-top: 5%;
   padding: 20px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.brand-logo {
+  justify-content: center;
+  max-width: 200px;
+  margin-bottom: 5px;
+  margin-left: 25%;
+}
+
 h2 {
   text-align: center;
+  border-top: 5px dashed black;
+  border-left: 5px dashed black;
+  border-right: 5px dashed black;
+  border-bottom: 5px dashed black;
+  padding-bottom: 5px; /* Adjust as needed to control the spacing between text and line */
   color: #000;
 }
 
@@ -38,6 +51,7 @@ input[type="tel"] {
 }
 
 input[type="submit"] {
+  margin-top: 3%;
   width: 100%;
   padding: 10px;
   background-color: #000;
