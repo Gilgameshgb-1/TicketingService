@@ -1,41 +1,32 @@
-const mysql = require("mysql2");
+//const fs = require("fs");
 
-const pool = mysql.createPool({
-  host: "localhost:3306",
-  user: "root",
-  password: "",
-  database: "ticketingservice",
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
 
-function insertData(name, surname, email, password, phoneNumber) {
-  console.log("Hey you entered insertData function");
-  const query =
-    "INSERT INTO registration (name, surname, email, password, phone_number) VALUES (?, ?, ?, ?, ?)";
-  const values = [name, surname, email, password, phoneNumber];
+  form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent the default form submission
 
-  pool.query(query, values, (error, results) => {
-    if (error) {
-      console.error("Error inserting data:", error);
-    } else {
-      console.log("Data inserted successfully");
-    }
+    // Get form data
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    // Convert to JSON and log to console
+    const jsonData = JSON.stringify(data, null, 2);
+    console.log(jsonData);
+
+    // Send data to the server
+    fetch("http://localhost:80/saveUserData", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.text())
+      .then((data) => console.log(data))
+      .catch((error) => console.error("Error:", error));
   });
-}
-
-const submitButton = document.getElementById("submit-button");
-
-submitButton.addEventListener("click", (event) => {
-  event.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const surname = document.getElementById("surname").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const phoneNumber = document.getElementById("phone").value;
-
-  // Call the insertData function with the form values
-  insertData(name, surname, email, password, phoneNumber);
 });

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Faris",
+    "surname": "Bazdar",
+    "email": "root@gmail.com",
+    "password": "admin",
+    "phone": "0603498320"
+  },
+  {
+    "name": "Selena",
+    "surname": "Kovacevic",
+    "email": "root@gmail.com",
+    "password": "adminka",
+    "phone": "0603498320"
+  }
+]
