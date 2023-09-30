@@ -2,6 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
+  const notificationDiv = document.getElementById("notification");
 
   form.addEventListener("submit", (event) => {
     event.preventDefault(); // Prevent the default form submission
@@ -25,7 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       body: JSON.stringify(data),
     })
-      .then((response) => response.text())
+      //.then((response) => response.text())
+      .then((response) => {
+        console.log(response.ok);
+        if (response.ok === false) {
+          notificationDiv.innerText = "This email is already registered!";
+        } else {
+          notificationDiv.innerText = "";
+        }
+      })
       .then((data) => console.log(data))
       .catch((error) => console.error("Error:", error));
   });

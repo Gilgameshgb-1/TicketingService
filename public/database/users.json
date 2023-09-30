@@ -12,5 +12,54 @@
     "email": "root@gmail.com",
     "password": "adminka",
     "phone": "0603498320"
+  },
+  {
+    "name": "Slipknot",
+    "surname": "Custer",
+    "email": "pozdravmiodnesi@gmail.com",
+    "password": "helloWorld",
+    "phone": "03492388239"
+  },
+  {
+    "name": "Faris",
+    "surname": "Bazdar",
+    "email": "rootawaw@gmail.com",
+    "password": "admin",
+    "phone": "0603498320"
+  },
+  {
+    "name": "Faris",
+    "surname": "Bazdar",
+    "email": "123root@gmail.com",
+    "password": "admin",
+    "phone": "0603498320"
+  },
+  {
+    "name": "Faris",
+    "surname": "Bazdar",
+    "email": "ro232ot@gmail.com",
+    "password": "admin",
+    "phone": "0603498320"
+  },
+  {
+    "name": "Faris",
+    "surname": "Bazdar",
+    "email": "aba@gmail.com",
+    "password": "admin",
+    "phone": "0603498320"
+  },
+  {
+    "name": "Selena",
+    "surname": "Kovacevic",
+    "email": "RadisLiSele@gmail.com",
+    "password": "admin",
+    "phone": "0603498320"
+  },
+  {
+    "name": "Selena",
+    "surname": "Kovacevic",
+    "email": "Selena@Selena.com",
+    "password": "admin",
+    "phone": "0603498320"
   }
 ]

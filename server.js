@@ -26,16 +26,26 @@ app.post("/saveUserData", (req, res) => {
     console.log("UH OH THIS HAPPENED");
   }
 
-  // Push the new user data
-  users.push(userData);
+  //Check if email already exists
+  const emailExists = users.some((user) => user.email === userData.email);
 
-  // Write updated data back to the file
-  fs.writeFileSync(
-    "./public/database/users.json",
-    JSON.stringify(users, null, 2)
-  );
+  console.log(emailExists);
 
-  res.send("Data saved successfully.");
+  if (emailExists) {
+    res.status(400).json({ success: false, message: "Email already exists." });
+    //res.status(400).send("Email already exists."); // Send a bad request status and a message
+  } else {
+    // Push the new user data
+    users.push(userData);
+
+    // Write updated data back to the file
+    fs.writeFileSync(
+      "./public/database/users.json",
+      JSON.stringify(users, null, 2)
+    );
+
+    res.send("Data saved successfully.");
+  }
 });
 
 // Start the server
