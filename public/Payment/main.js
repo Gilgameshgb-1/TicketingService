@@ -42,7 +42,7 @@ function updateTimer() {
   timeRemainingString += secondsRemaining;
 
   // update timer display
-  timerDisplay.innerHTML = timeRemainingString;
+  timerDisplay.innerHTML = "Preostalo vrijeme: " + timeRemainingString;
 
   // update progress bar width
   const progressBarWidth =

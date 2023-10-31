@@ -11,7 +11,11 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 // set map center and zoom level
-map.setView([51.505, -0.09], 13);
+map.setView([43.871859259289316, 18.40950671364911], 15);
+
+var markerCoordinates = [43.871859259289316, 18.40950671364911];
+var marker = L.marker(markerCoordinates).addTo(map);
+marker.bindPopup("Dvorana Zetra").openPopup();
 
 // // add a marker to the map
 // L.marker([51.5, -0.09]).addTo(map);
