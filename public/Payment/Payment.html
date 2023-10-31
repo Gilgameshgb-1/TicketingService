@@ -45,7 +45,7 @@
     <div class="container">
       <div class="left-section">
         <div id="timer">
-          <span id="time">Preostalo vrijeme: 15:00</span>
+          <span id="time">Remaining time: 15:00</span>
         </div>
         <div id="progress-container">
           <div id="progress-bar"></div>
@@ -55,13 +55,35 @@
         </div>
         <div id="button-card">
           <div class="add-card-container">
-            <div class="card-icon">
-              <img src="add.png" class="card-icon" alt="Card icon" />
-            </div>
             <img src="icon-card.png" class="card-icon" alt="Card icon" />
-            <a href="#" class="add-card-button">Add New Card</a>
+            <a href="#" class="add-card-button" id="open-popup">Add New Card</a>
           </div>
         </div>
+        <div class="card-info" id="card-info">
+          <p>Card Information:</p>
+          <p>
+            <strong>Card Number:</strong> <span id="saved-card-number"></span>
+          </p>
+          <p>
+            <strong>Cardholder Name:</strong>
+            <span id="saved-cardholder-name"></span>
+          </p>
+          <p>
+            <strong>Expiration Date:</strong>
+            <span id="saved-expiration-date"></span>
+          </p>
+        </div>
+        <div class="ticket-info" id="ticket-info">
+          <p>Ticket Information:</p>
+          <ul id="ticket-list"></ul>
+          <p>Total Amount: <span id="total-amount">$0.00</span></p>
+        </div>
+        <button
+          class="custom-button complete-purchase-button"
+          id="complete-purchase-button"
+        >
+          Complete Purchase
+        </button>
       </div>
       <div class="right-section">
         <h1 class="event-name">Rammstein koncert</h1>
@@ -69,15 +91,54 @@
         <div>
           <img src="venue2.jpg" alt="Scaled Image" class="scaled-image" />
         </div>
-        <ul class="item-list">
-          <li class="item">VIP karta x1</li>
-          <li class="item">Parter x2</li>
-          <li class="item">Feuerzone x3</li>
-        </ul>
         <div id="map">Map</div>
       </div>
     </div>
     <script src="map.js"></script>
     <script src="main.js"></script>
+    <div class="overlay" id="overlay">
+      <div class="popup" id="popup">
+        <h2>Card Details</h2>
+        <form id="card-form">
+          <div class="form-group">
+            <label for="card-number">Card Number:</label>
+            <input
+              type="text"
+              class="custom-input"
+              id="card-number"
+              required
+              maxlength="19"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="cardholder-name">Cardholder Name:</label>
+            <input
+              type="text"
+              class="custom-input"
+              id="cardholder-name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="expiration-date">Expiration Date (MM/YYYY):</label>
+            <input
+              type="text"
+              class="custom-input"
+              id="expiration-date"
+              required
+            />
+          </div>
+
+          <button type="submit" class="custom-button" id="save-button">
+            Save
+          </button>
+        </form>
+        <button class="custom-button secondary-button" id="close-popup">
+          Close
+        </button>
+      </div>
+    </div>
   </body>
 </html>

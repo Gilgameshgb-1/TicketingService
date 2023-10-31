@@ -95,12 +95,15 @@
 #name {
   font-size: 28px;
   color: #333;
-  margin: 10px 0;
+  margin-top: 10%;
+  margin-bottom: 3%;
 }
 
 .add-card-container {
-  text-align: left;
-  margin: 20px 0;
+  text-align: center; /* Center the content horizontally */
+  display: flex; /* Use flexbox to align items vertically */
+  align-items: center; /* Center items vertically within the container */
+  justify-content: left; /* Center items horizontally within the container */
 }
 .card-icon {
   display: inline-block;
@@ -117,7 +120,7 @@
   text-decoration: none;
   border: 1px solid #333;
   border-radius: 4px;
-  padding: 8px 12px;
+  padding: 8px 22px;
 }
 
 .green-button {
@@ -221,4 +224,113 @@ nav .dropdown:hover .dropdown-content {
   max-width: 400px; /* Limits the image width to 300 pixels, maintaining aspect ratio */
   /* or */
   max-height: 300px; /* Limits the image height to 200 pixels, maintaining aspect ratio */
+  margin-bottom: 5%;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Custom styles for the form */
+.popup {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transform: translate(100%, 75%);
+  padding: 20px;
+  width: 300px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.custom-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.custom-button {
+  background-color: #030303;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1%;
+  width: 120px;
+}
+
+.secondary-button {
+  background-color: #ccc;
+  color: #000;
+}
+
+.custom-button:hover {
+  background-color: #494b4c;
+}
+
+/* Style for the "Complete Purchase" button */
+.complete-purchase-button {
+  height: 60px;
+  width: 200px;
+  position: absolute;
+  bottom: 8%;
+  right: 52%;
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.complete-purchase-button:hover {
+  background-color: #767676;
+}
+
+/* Style for the ticket information */
+.ticket-info {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.ticket-info p {
+  font-weight: bold;
+}
+
+ul#ticket-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul#ticket-list li {
+  padding: 5px 0;
+}
+
+/* Style for each ticket item in the list */
+ul#ticket-list li::before {
+  content: "\2022"; /* Bullet character */
+  color: #000000;
+  display: inline-block;
+  width: 1em;
+  margin-left: 1%;
+  font-size: 1.5em;
+  padding-right: 5px;
 }
