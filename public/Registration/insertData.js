@@ -33,6 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
           notificationDiv.innerText = "This email is already registered!";
         } else {
           notificationDiv.innerText = "";
+          alert(
+            "Registration successful. You will now be redirected to the homepage."
+          );
+          setTimeout(function () {
+            window.location.href = "../index.html"; //Redirection without warning back to index.html
+          }, 2000);
         }
       })
       .then((data) => console.log(data))
