@@ -61,5 +61,12 @@
     "email": "Selena@Selena.com",
     "password": "admin",
     "phone": "0603498320"
+  },
+  {
+    "name": "Faris",
+    "surname": "Bazdar",
+    "email": "roo123123t@gmail.com",
+    "password": "admin",
+    "phone": "0603498320"
   }
 ]

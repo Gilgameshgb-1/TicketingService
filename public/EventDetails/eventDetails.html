@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!-- Load Leaflet JS -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script src="main.js"></script>
+    <script src="map.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="../index.html" class="title">Events.ba</a>
+      <a href="../Concerts/concert.html">Concerts</a>
+      <a href="#">Sports</a>
+      <div class="dropdown">
+        <button class="dropbtn">
+          More
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Standup comedy</a>
+          <a href="#">Shows</a>
+          <a href="#">Cinema</a>
+        </div>
+      </div>
+      <a href="../Help/Help.html" class="right">Help</a>
+      <a href="#" class="right">Actions</a>
+    </nav>
+    <div class="container">
+      <div class="column">
+        <!-- Content for the first column -->
+        <h2>Name of event should go here</h2>
+        <img id="dynamicImage" src="" alt="Dynamic Image" class="event-image" />
+        <div id="map" class="map-container"></div>
+      </div>
+      <div class="column">
+        <!-- Content for the second column -->
+        <h2>Performer details</h2>
+        <p>
+          Rammstein, a German industrial metal band, has made a profound impact
+          on the music world since its formation in 1994. Comprising six
+          members, including Till Lindemann (vocals), Richard Z. Kruspe and Paul
+          Landers (guitarists), Oliver Riedel (bassist), Christoph Schneider
+          (drummer), and Christian "Flake" Lorenz (keyboardist), Rammstein's
+          distinctive blend of heavy metal and electronic elements has earned
+          them international recognition. The band's name, derived from the
+          Ramstein air show disaster in 1988, foreshadows their penchant for
+          controversy and provocative themes in their music and stage presence.
+          Most of their songs are delivered in German, featuring dark and
+          controversial themes encompassing love, violence, politics, and human
+          nature.
+        </p>
+        <br />
+        <p>
+          Lindemann's deep and powerful vocals are a defining characteristic of
+          their music. Rammstein's breakthrough came with their 1997 album
+          "Sehnsucht," featuring the worldwide hit "Du hast." This song
+          introduced them to a global audience and set the stage for their
+          ongoing success. Subsequent albums, including "Mutter," "Reise,
+          Reise," "Rosenrot," and "Liebe ist für alle da," further cemented
+          their status in the international music scene. What truly sets
+          Rammstein apart is their legendary live performances. The band is
+          renowned for their explosive stage shows, complete with elaborate
+          pyrotechnics, intricate stage setups, and a theatrical approach that
+          captivates audiences.
+        </p>
+        <br />
+        <p>
+          Attending a Rammstein concert is a sensory overload, leaving an
+          indelible mark on all who witness it. Rammstein's influence on the
+          industrial metal genre is undeniable, with their pioneering fusion of
+          electronic and metal elements inspiring countless artists. Despite the
+          controversial nature of their music, Rammstein has maintained a
+          devoted and passionate fan base worldwide, achieving platinum and
+          multi-platinum record sales. With their powerful music,
+          thought-provoking lyrics, and explosive live performances, Rammstein
+          remains one of the most influential and enigmatic bands of the 21st
+          century.
+        </p>
+      </div>
+      <div class="column">
+        <!-- Content for the third column -->
+        <h2>Venue details and ticket picker</h2>
+        <div class="product">
+          <p>Product 1</p>
+          <div class="counter">
+            <button class="minus">-</button>
+            <span class="count">0</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+        <div class="product">
+          <p>Product 1</p>
+          <div class="counter">
+            <button class="minus">-</button>
+            <span class="count">0</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+        <div class="product">
+          <p>Product 1</p>
+          <div class="counter">
+            <button class="minus">-</button>
+            <span class="count">0</span>
+            <button class="plus">+</button>
+          </div>
+        </div>
+        <h2>Venue details</h2>
+        <p>
+          Rammstein, a German industrial metal band, has made a profound impact
+          on the music world since its formation in 1994. Comprising six
+          members, including Till Lindemann (vocals), Richard Z. Kruspe and Paul
+          Landers (guitarists), Oliver Riedel (bassist), Christoph Schneider
+          (drummer), and Christian "Flake" Lorenz (keyboardist), Rammstein's
+          distinctive blend of heavy metal and electronic elements has earned
+          them international recognition. The band's name, derived from the
+          Ramstein air show disaster in 1988, foreshadows their penchant for
+          controversy and provocative themes in their music and stage presence.
+          Most of their songs are delivered in German, featuring dark and
+          controversial themes encompassing love, violence, politics, and human
+          nature.
+        </p>
+        <button
+          class="custom-button goto-payment-button"
+          id="goto-payment-button"
+        >
+          Go to payment
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -99,10 +99,103 @@ nav .dropdown:hover .dropdown-content {
 }
 
 .view-button {
-  background-color: #000000;
+  background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  text-decoration: none;
+}
+
+/* Reset some default styles and set the box model to border-box */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style the container that holds the columns */
+.container {
+  display: flex;
+}
+
+/* Style each column */
+.column {
+  flex: 1; /* Each column takes up an equal amount of space */
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+/* Add some spacing and styling to make it visually appealing */
+.column h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.column p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* You can add more CSS to customize the appearance further */
+.event-image {
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 2%;
+}
+
+#map {
+  width: 100%;
+  height: 380px;
+  /* background-color: #eee; */
+}
+.product {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  width: 25px;
+  height: 25px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2e2e2e;
+}
+
+.count {
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.goto-payment-button {
+  margin-top: 5%;
+  height: 60px;
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.goto-payment-button:hover {
+  background-color: #767676;
 }
