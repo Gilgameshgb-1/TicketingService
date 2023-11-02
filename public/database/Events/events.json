@@ -32,6 +32,237 @@
         "minutes": 30
       },
       "date": "13.01.2024"
+    },
+    {
+      "eventNumber": "event2",
+      "location": {
+        "latitude": 43.87422734751735,
+        "longitude": 18.40824586190268
+      },
+      "concertName": "Taylor Swift Tour",
+      "performerDetails": "Taylor Swift, the renowned American singer-songwriter, was born on December 13, 1989, in Reading, Pennsylvania. With her exceptional talent, Swift has become one of the most influential and successful artists of her generation. Her career, which spans over a decade and a half, has earned her a massive global fanbase. Known as \"Swifties,\" her fans admire not only her music but also her songwriting prowess and relatable lyrics. Taylor Swift's journey to stardom began at an early age. Encouraged by her family, she discovered her passion for music and started performing in local events. At 14, Swift and her family took a significant step by relocating to Nashville, Tennessee, the heart of the country music industry, to pursue her dreams. In Nashville, she signed with Big Machine Records and released her self-titled debut album in 2006, featuring songs that she had written herself. The album was a critical and commercial success, making her the youngest artist to sign with Sony/ATV, the world's largest music publisher. Swift's subsequent albums, including \"Fearless\" (2008), \"Speak Now\" (2010), \"Red\" (2012), \"1989\" (2014), \"Reputation\" (2017), and \"Lover\" (2019), showcased her evolving sound and musical versatility. She seamlessly transitioned from country to pop music, winning numerous awards and accolades, including 11 Grammy Awards. Her songwriting skills, often drawing from personal experiences, have resonated with fans of all ages. Taylor Swift's impact on the music industry goes beyond her chart-topping hits; it's her storytelling, relatability, and genuine connection with her audience that set her apart. Her ability to express complex emotions and experiences through her music has solidified her status as an icon in the entertainment world. With her continued success and unwavering dedication to her craft, Taylor Swift's influence on music and culture remains profound and enduring.",
+      "tickets": [
+        {
+          "type": "Seating",
+          "available": 1000
+        },
+        {
+          "type": "General Admission",
+          "available": 500
+        },
+        {
+          "type": "VIP",
+          "available": 100
+        }
+      ],
+      "venueDetails": {
+        "name": "Stadion „Asim Ferhatović Hase",
+        "address": "Alipašina bb, Sarajevo 71000",
+        "capacity": 1600
+      },
+      "startTime": {
+        "hours": 19,
+        "minutes": 30
+      },
+      "date": "20.07.2024"
+    },
+    {
+      "eventNumber": "event3",
+      "location": {
+        "latitude": 43.85739255768984,
+        "longitude": 18.42077312777463
+      },
+      "concertName": "Hamilton Tour",
+      "performerDetails": "\"Hamilton,\" the groundbreaking Broadway musical, conceived, written, and composed by Lin-Manuel Miranda, has taken the world by storm since its debut in 2015. This innovative and culturally significant production offers a unique and revolutionary blend of hip-hop, R&B, and traditional musical theater to tell the story of one of America's founding fathers, Alexander Hamilton. Drawing inspiration from Ron Chernow's biography, Lin-Manuel Miranda brings to life the lesser-known historical figure through a diverse cast and an ingenious fusion of music and storytelling. The show centers on the life and achievements of Alexander Hamilton, a Caribbean immigrant who played a pivotal role in shaping the United States during and after the American Revolution. Lin-Manuel Miranda's brilliant lyrics and music provide a dynamic backdrop for this historical narrative, with a cast of characters including George Washington, Thomas Jefferson, and Aaron Burr. \"Hamilton\" explores themes of ambition, power, love, and the complexities of the American Dream, all set against the backdrop of the nation's tumultuous early years.Beyond its theatrical success, \"Hamilton\" has had a profound impact on American culture and education. The show's themes and historical accuracy have made it a valuable tool for educators and students, helping to spark an interest in history and the Founding Fathers. Lin-Manuel Miranda's commitment to educational outreach led to the \"Hamilton Education Program,\" providing students with an opportunity to engage with the musical and explore the history it portrays. As \"Hamilton\" continues to captivate audiences around the world, it remains a testament to the power of storytelling through the arts. The show's message of determination, resilience, and the ability of one individual to shape history has made it a cultural phenomenon. Lin-Manuel Miranda's creation serves as a reminder that the story of Alexander Hamilton and the founding of the United States is a tale worth celebrating and sharing, and \"Hamilton\" does so in a way that is as innovative and extraordinary as the man and the era it portrays.",
+      "tickets": [
+        {
+          "type": "Seating upper floor",
+          "available": 200
+        },
+        {
+          "type": "General Admission",
+          "available": 100
+        },
+        {
+          "type": "Front seats",
+          "available": 50
+        }
+      ],
+      "venueDetails": {
+        "name": "Narodno pozorište Sarajevu",
+        "address": "Obala Kulina bana 9, Sarajevo 71000",
+        "capacity": 350
+      },
+      "startTime": {
+        "hours": 21,
+        "minutes": 30
+      },
+      "date": "16.04.2024"
+    },
+    {
+      "eventNumber": "event4",
+      "location": {
+        "latitude": 43.84674420890974,
+        "longitude": 18.387359117235317
+      },
+      "concertName": "Kanye West Tour",
+      "performerDetails": "Kanye West, born on June 8, 1977, in Atlanta, Georgia, is a globally renowned figure in the realms of music, fashion, and popular culture. With a career marked by innovation, controversy, and a constant quest for creative expression, West has left an indelible mark on the entertainment industry. His musical journey began as a producer, crafting beats for notable artists, including Jay-Z. West's groundbreaking work on Jay-Z's \"The Blueprint\" set the stage for his own career as a solo artist. In 2004, he released \"The College Dropout,\" a critically acclaimed debut that showcased his innovative production, poignant lyricism, and social commentary. This album challenged hip-hop conventions, tackling themes like education, racism, and self-identity. Over the years, West's discography has continued to evolve, exploring a diverse range of musical styles. Albums such as \"Late Registration,\" \"Graduation,\" and \"My Beautiful Dark Twisted Fantasy\" solidified his reputation as an artist unafraid to push boundaries. He seamlessly blends soulful hip-hop with electronic and gospel influences, redefining the sound of popular music. West's artistic vision extends to visual arts, with him directing music videos and designing album covers that are as distinctive as his music. He is known for addressing social and political issues through his work, often courting controversy with provocative statements. He is a multi-Grammy winner and has been lauded for his contributions to music and fashion. His cultural influence extends to art, design, and technology. Moreover, his philanthropic efforts, such as the Yeezy Home project, demonstrate his commitment to social causes and community development. Kanye West remains a complex and enigmatic figure, but his artistic legacy is undeniable. As a visionary artist, fashion designer, and cultural provocateur, he continues to shape the course of music and culture in the 21st century, leaving an enduring legacy that resonates with generations to come.",
+      "tickets": [
+        {
+          "type": "Left Wing",
+          "available": 3500
+        },
+        {
+          "type": "Right Wing",
+          "available": 3500
+        },
+        {
+          "type": "Front Wing",
+          "available": 3000
+        }
+      ],
+      "venueDetails": {
+        "name": "Stadion Grbavica",
+        "address": "Zvornička 27, Sarajevo 71000",
+        "capacity": 10000
+      },
+      "startTime": {
+        "hours": 20,
+        "minutes": 15
+      },
+      "date": "20.10.2024"
+    },
+    {
+      "eventNumber": "event5",
+      "location": {
+        "latitude": 43.859781975937395,
+        "longitude": 18.418795003525876
+      },
+      "concertName": "Reol Tour",
+      "performerDetails": "REOL, the Japanese music sensation, is an extraordinary trio that has left an indelible mark on the music scene. Comprising three talented members, Reol (vocals), Giga (composition and arrangement), and Okiku (visual art and video production), REOL's music is a captivating fusion of electronic, pop, and J-pop influences. Their journey began with individual successes; Reol garnered attention as a popular utaite (cover artist) on Nico Nico Douga, renowned for her powerful and versatile voice, while Giga, a skilled music producer, established himself through his innovative arrangements of Vocaloid songs and original compositions. Officially forming as a music unit in 2015, REOL quickly gained recognition with their debut single, \"No Title,\" known for its catchy melodies and unique vocal arrangements. The group's music videos are a visual spectacle, often featuring vibrant and surreal imagery that complements their music's creativity and storytelling. Their songs touch on various themes, from personal experiences to social and cultural commentary, connecting with a diverse audience. REOL's discography showcases their versatility, with an array of singles and albums that explore different electronic music subgenres. Their experimentation spans from drum and bass to glitch-hop, consistently pushing boundaries. Some of their music videos, such as \"Give Me a Break Stop Now\" and \"Lost Paradise,\" have amassed millions of views, attracting a global fanbase. Beyond recorded music, REOL is renowned for their electrifying live performances. Reol's compelling vocals and stage presence shine in these concerts, creating an unforgettable experience for their dedicated fans. Their live shows brim with energy and passion, bringing their unique sound to life. In a relatively short time, REOL has made a significant impact, particularly in the realms of J-pop and electronic music. They are known for their innovation, constantly pushing the boundaries of their genre. Their artistic endeavors extend beyond music, and they continue to inspire a global audience with their creative vision and talent. ",
+      "tickets": [
+        {
+          "type": "General Admission - Front",
+          "available": 500
+        },
+        {
+          "type": "General Admission - Back",
+          "available": 500
+        },
+        {
+          "type": "VIP",
+          "available": 100
+        }
+      ],
+      "venueDetails": {
+        "name": "Cinemas Sloga",
+        "address": "Mehmeda Spahe 20, Sarajevo 710000",
+        "capacity": 1100
+      },
+      "startTime": {
+        "hours": 21,
+        "minutes": 15
+      },
+      "date": "27.11.2024"
+    },
+    {
+      "eventNumber": "event6",
+      "location": {
+        "latitude": 43.87382514820853,
+        "longitude": 18.408589181745104
+      },
+      "concertName": "System of a Down Tour",
+      "performerDetails": "System of a Down, often abbreviated as SOAD, is a legendary American rock band that has had a profound impact on the music world since its formation in 1994. Comprising four talented members - Serj Tankian (vocals), Daron Malakian (guitar, vocals), Shavo Odadjian (bass), and John Dolmayan (drums) - the band has forged a distinctive path in the realm of alternative and heavy metal music. System of a Down is celebrated for its genre-defying sound, which fuses elements of metal, rock, punk, and folk with lyricism that delves into an array of social and political issues. The band's roots are planted in Los Angeles, where they initially performed in the local music scene. Their eponymous debut album, \"System of a Down,\" released in 1998, introduced their signature style, blending ferocious aggression and mesmerizing melody. The album included tracks like \"Sugar\" and \"Spiders\" that captured listeners' attention and set the stage for their unique sonic journey. In 2001, \"Toxicity\" catapulted the band to global stardom. With hit songs such as \"Chop Suey!\" and \"Aerials,\" the album not only garnered critical acclaim but also solidified their place in rock history, earning them a fervent fanbase. System of a Down's music is renowned for its lyrical depth, addressing a spectrum of social and political themes, from war and genocide to drug addiction. Tracks like \"BYOB\" and \"Prison Song\" deliver their messages with unfiltered intensity, prompting discussion and reflection. System of a Down's live performances are legendary, characterized by high energy and a profound emotional connection with their audience. They have headlined major music festivals and tours across the globe, leaving a trail of unforgettable concerts and performances. After a period of hiatus, the band reunited in the 2010s and performed live shows, thrilling fans with their iconic sound. Their influence on the rock and metal genres is immeasurable, and their place in the annals of music history is firmly established.",
+      "tickets": [
+        {
+          "type": "Seating",
+          "available": 1000
+        },
+        {
+          "type": "General Admission",
+          "available": 500
+        },
+        {
+          "type": "VIP",
+          "available": 100
+        }
+      ],
+      "venueDetails": {
+        "name": "Stadion „Asim Ferhatović Hase",
+        "address": "Alipašina bb, Sarajevo 71000",
+        "capacity": 1600
+      },
+      "startTime": {
+        "hours": 20,
+        "minutes": 30
+      },
+      "date": "20.06.2024"
+    },
+    {
+      "eventNumber": "event7",
+      "location": {
+        "latitude": 43.85804960552799,
+        "longitude": 18.4039516127128
+      },
+      "concertName": "Breskvica Tour",
+      "performerDetails": "Breskvica, whose real name is Anđela Ignjatović, is a Serbian singer born on May 19, 2001 in Belgrade. She made her recording debut with the single “Utopia\" in 2019 and rose to more significant popularity by collaborating with her then-boyfriend Voyage on a series of singles between 2019 and 2012. Together they received the YouTube Star Award at the 2020 Music Awards Ceremony2. Following their breakup in 2021, Breskvica pursued a solo career in July with the single “Bonvoyage\" as a reference to her ex-boyfriend2. She has had four top ten singles on the Billboard Croatia Songs chart, including the chart-topping “Drift\" (2023) with Teodora. Breskvica's music style is a blend of hip-hop, trap, pop and pop-folk1. She plays the piano and guitar2. Her music videos are known for their unique visual style and have amassed millions of views on YouTube1. In early 2022, she released two singles, “Maska\" (Mask) and a collaboration with MC Stojan titled “Život si moj\" (You're My Life). The latter became her first song to chart on Billboard's newly introduced Croatia Songs chart2. Breskvica represented Serbia in The Song 5 in Espoo, Finland with the song “Leptir\", written by herself, Henny and Relja Torinno1. She has since become one of the most popular singers in Serbia. Her music has been compared to that of Billie Eilish and Doja Cat. In conclusion, Breskvica is a young and talented Serbian singer who has made a name for herself in the music industry. Her unique style and collaborations have earned her millions of fans worldwide. Her music is a blend of hip-hop, trap, pop and pop-folk. She has had four top ten singles on the Billboard Croatia Songs chart, including the chart-topping “Drift\" (2023) with Teodora. Breskvica is definitely an artist to watch out for in the future! 🎶",
+      "tickets": [
+        {
+          "type": "General Admission - Front",
+          "available": 300
+        },
+        {
+          "type": "General Admission - Back",
+          "available": 300
+        },
+        {
+          "type": "VIP",
+          "available": 100
+        }
+      ],
+      "venueDetails": {
+        "name": "Trezor",
+        "address": "Kranjčevićeva bb, Sarajevo 71000",
+        "capacity": 700
+      },
+      "startTime": {
+        "hours": 20,
+        "minutes": 30
+      },
+      "date": "17.05.2024"
+    },
+    {
+      "eventNumber": "event8",
+      "location": {
+        "latitude": 43.87382514820853,
+        "longitude": 18.408589181745104
+      },
+      "concertName": "Metallica Tour",
+      "performerDetails": "Metallica, the iconic American heavy metal band, is a name that reverberates through the annals of rock history. Formed in Los Angeles in 1981, the band's lineup features James Hetfield (vocals and rhythm guitar), Lars Ulrich (drums), Kirk Hammett (lead guitar), and Robert Trujillo (bass). With over four decades of groundbreaking music, Metallica is widely acknowledged as one of the most influential and successful bands in the world of heavy metal and rock. The band's journey began with a fervor to redefine the metal genre. Their debut album, \"Kill 'Em All\" (1983), burst onto the scene with raw energy and virtuosity. Tracks like \"Seek & Destroy\" and \"Whiplash\" established their unique style, marked by thunderous riffs, intricate guitar solos, and powerful lyrics. Metallica's breakthrough came with \"Ride the Lightning\" (1984) and \"Master of Puppets\" (1986), often cited as masterpieces of the genre. These albums, featuring classics like \"Fade to Black\" and the eponymous \"Master of Puppets,\" cemented their status as metal legends. Tragically, their ascent was marred by the loss of bassist Cliff Burton in a tour bus accident in 1986, an event that profoundly affected the band. The subsequent album, \"...And Justice for All\" (1988), represented a turning point, introducing a more progressive and socially conscious element into their music. Songs like \"One\" and \"Dyers Eve\" delved into complex themes and showcased their songwriting prowess. In 1991, \"The Black Album\" (officially titled \"Metallica\") propelled them to international stardom. Hits like \"Enter Sandman,\" \"Sad But True,\" and \"Nothing Else Matters\" contributed to the album's massive commercial success, introducing Metallica to a mainstream audience. Despite concerns that their sound was becoming more accessible to the masses, the album remains an integral part of their legacy. Metallica's live performances are renowned for their electrifying energy and passionate fanbase. They have headlined major music festivals and embarked on worldwide tours, solidifying their status as one of the greatest live bands in history.",
+      "tickets": [
+        {
+          "type": "Seating",
+          "available": 1000
+        },
+        {
+          "type": "General Admission",
+          "available": 500
+        },
+        {
+          "type": "VIP",
+          "available": 100
+        }
+      ],
+      "venueDetails": {
+        "name": "Stadion „Asim Ferhatović Hase",
+        "address": "Alipašina bb, Sarajevo 71000",
+        "capacity": 1600
+      },
+      "startTime": {
+        "hours": 20,
+        "minutes": 15
+      },
+      "date": "03.09.2024"
     }
   ]
 }
