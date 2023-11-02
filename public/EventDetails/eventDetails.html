@@ -39,60 +39,20 @@
     <div class="container">
       <div class="column">
         <!-- Content for the first column -->
-        <h2>Name of event should go here</h2>
+        <h2 id="eventTitle">Name of event should go here</h2>
         <img id="dynamicImage" src="" alt="Dynamic Image" class="event-image" />
         <div id="map" class="map-container"></div>
       </div>
       <div class="column">
         <!-- Content for the second column -->
         <h2>Performer details</h2>
-        <p>
-          Rammstein, a German industrial metal band, has made a profound impact
-          on the music world since its formation in 1994. Comprising six
-          members, including Till Lindemann (vocals), Richard Z. Kruspe and Paul
-          Landers (guitarists), Oliver Riedel (bassist), Christoph Schneider
-          (drummer), and Christian "Flake" Lorenz (keyboardist), Rammstein's
-          distinctive blend of heavy metal and electronic elements has earned
-          them international recognition. The band's name, derived from the
-          Ramstein air show disaster in 1988, foreshadows their penchant for
-          controversy and provocative themes in their music and stage presence.
-          Most of their songs are delivered in German, featuring dark and
-          controversial themes encompassing love, violence, politics, and human
-          nature.
-        </p>
-        <br />
-        <p>
-          Lindemann's deep and powerful vocals are a defining characteristic of
-          their music. Rammstein's breakthrough came with their 1997 album
-          "Sehnsucht," featuring the worldwide hit "Du hast." This song
-          introduced them to a global audience and set the stage for their
-          ongoing success. Subsequent albums, including "Mutter," "Reise,
-          Reise," "Rosenrot," and "Liebe ist für alle da," further cemented
-          their status in the international music scene. What truly sets
-          Rammstein apart is their legendary live performances. The band is
-          renowned for their explosive stage shows, complete with elaborate
-          pyrotechnics, intricate stage setups, and a theatrical approach that
-          captivates audiences.
-        </p>
-        <br />
-        <p>
-          Attending a Rammstein concert is a sensory overload, leaving an
-          indelible mark on all who witness it. Rammstein's influence on the
-          industrial metal genre is undeniable, with their pioneering fusion of
-          electronic and metal elements inspiring countless artists. Despite the
-          controversial nature of their music, Rammstein has maintained a
-          devoted and passionate fan base worldwide, achieving platinum and
-          multi-platinum record sales. With their powerful music,
-          thought-provoking lyrics, and explosive live performances, Rammstein
-          remains one of the most influential and enigmatic bands of the 21st
-          century.
-        </p>
+        <p id="eventDetails"></p>
       </div>
       <div class="column">
         <!-- Content for the third column -->
         <h2>Venue details and ticket picker</h2>
         <div class="product">
-          <p>Product 1</p>
+          <p id="ticketType1">Product 1</p>
           <div class="counter">
             <button class="minus">-</button>
             <span class="count">0</span>
@@ -100,7 +60,7 @@
           </div>
         </div>
         <div class="product">
-          <p>Product 1</p>
+          <p id="ticketType2">Product 1</p>
           <div class="counter">
             <button class="minus">-</button>
             <span class="count">0</span>
@@ -108,28 +68,19 @@
           </div>
         </div>
         <div class="product">
-          <p>Product 1</p>
+          <p id="ticketType3">Product 1</p>
           <div class="counter">
             <button class="minus">-</button>
             <span class="count">0</span>
             <button class="plus">+</button>
           </div>
         </div>
-        <h2>Venue details</h2>
-        <p>
-          Rammstein, a German industrial metal band, has made a profound impact
-          on the music world since its formation in 1994. Comprising six
-          members, including Till Lindemann (vocals), Richard Z. Kruspe and Paul
-          Landers (guitarists), Oliver Riedel (bassist), Christoph Schneider
-          (drummer), and Christian "Flake" Lorenz (keyboardist), Rammstein's
-          distinctive blend of heavy metal and electronic elements has earned
-          them international recognition. The band's name, derived from the
-          Ramstein air show disaster in 1988, foreshadows their penchant for
-          controversy and provocative themes in their music and stage presence.
-          Most of their songs are delivered in German, featuring dark and
-          controversial themes encompassing love, violence, politics, and human
-          nature.
-        </p>
+        <h2 class="venueDetails">Venue details</h2>
+        <p id="venueName"></p>
+        <p id="capacity"></p>
+        <p id="address"></p>
+        <p id="date"></p>
+        <p id="startTime"></p>
         <button
           class="custom-button goto-payment-button"
           id="goto-payment-button"

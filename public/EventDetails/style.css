@@ -199,3 +199,7 @@ button:hover {
 .goto-payment-button:hover {
   background-color: #767676;
 }
+
+.venueDetails {
+  margin-top: 20%;
+}

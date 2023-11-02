@@ -1,0 +1,37 @@
+{
+  "events": [
+    {
+      "eventNumber": "event1",
+      "location": {
+        "latitude": 43.871859259289316,
+        "longitude": 18.40950671364911
+      },
+      "concertName": "Rammstein Tour",
+      "performerDetails": "Rammstein, a German industrial metal band, has made a profound impact on the music world since its formation in 1994. Comprising six members, including Till Lindemann (vocals), Richard Z. Kruspe and Paul Landers (guitarists), Oliver Riedel (bassist), Christoph Schneider (drummer), and Christian \"Flake\" Lorenz (keyboardist), Rammstein's distinctive blend of heavy metal and electronic elements has earned them international recognition. The band's name, derived from the Ramstein air show disaster in 1988, foreshadows their penchant for controversy and provocative themes in their music and stage presence. Most of their songs are delivered in German, featuring dark and controversial themes encompassing love, violence, politics, and human nature.Lindemann's deep and powerful vocals are a defining characteristic of their music. Rammstein's breakthrough came with their 1997 album \"Sehnsucht,\" featuring the worldwide hit \"Du hast.\" This song introduced them to a global audience and set the stage for their ongoing success. Subsequent albums, including \"Mutter,\" \"Reise, Reise,\" \"Rosenrot,\" and \"Liebe ist für alle da,\" further cemented their status in the international music scene. What truly sets Rammstein apart is their legendary live performances. The band is renowned for their explosive stage shows, complete with elaborate pyrotechnics, intricate stage setups, and a theatrical approach that captivates audiences. Attending a Rammstein concert is a sensory overload, leaving an indelible mark on all who witness it. Rammstein's influence on the industrial metal genre is undeniable, with their pioneering fusion of electronic and metal elements inspiring countless artists. Despite the controversial nature of their music, Rammstein has maintained a devoted and passionate fan base worldwide, achieving platinum and multi-platinum record sales. With their powerful music, thought-provoking lyrics, and explosive live performances, Rammstein remains one of the most influential and enigmatic bands of the 21st century.\" ",
+      "tickets": [
+        {
+          "type": "Feuer Zone",
+          "available": 50
+        },
+        {
+          "type": "General Admission",
+          "available": 500
+        },
+        {
+          "type": "VIP",
+          "available": 100
+        }
+      ],
+      "venueDetails": {
+        "name": "Dvorana Zetra",
+        "address": "Alipašina bb Bjelašnica",
+        "capacity": 650
+      },
+      "startTime": {
+        "hours": 20,
+        "minutes": 30
+      },
+      "date": "13.01.2024"
+    }
+  ]
+}
