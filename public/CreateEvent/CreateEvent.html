@@ -1,58 +1,110 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script> 
+    <title>Create Event</title>
+</head>
+<body>
+    <nav>
+      <a href="../index.html" class="title">Events.ba</a>
+      <a href="../Concerts/concert.html">Concerts</a>
+      <a href="#">Sports</a>
+      <div class="dropdown">
+        <button class="dropbtn">
+          More
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Standup comedy</a>
+          <a href="#">Shows</a>
+          <a href="#">Cinema</a>
+        </div>
+      </div>
+      <a href="../Help/Help.html" class="right">Help</a>
+      <a href="#" class="right">Actions</a>
+    </nav>
     <div class="container">
-        <div class = "left-section">
-          <form class="form-container">
-            <label for="event-name">Name of Event:</label>
-            <input type="text" id="event-name" name="event-name" />
-      
-            <label for="event-address">Event Address:</label>
-            <input type="text" id="event-address" name="event-address" />
-      
-            <label for="event-date-time">Date and Time of Event:</label>
-            <input
-              type="datetime-local"
-              id="event-date-time"
-              name="event-date-time"
-            />
-            <label for="event-description">Event Description:</label>
-            <textarea id="event-description" name="event-description"></textarea>
-      
-            <label>Main Category:</label>
-            <select id="main-category" name="main-category">
-              <option value="category1">Category 1</option>
-              <option value="category2">Category 2</option>
-              <option value="category3">Category 3</option>
-            </select>
-      
-            <label>Optional Categories:</label>
-            <select id="optional-categories" name="optional-categories">
-              <option value="category1">Category 1</option>
-              <option value="category2">Category 2</option>
-              <option value="category3">Category 3</option>
-            </select>
-          </form>
+        <div class="column-left">
+            <h2>Event Information</h2>
+            <div class="form-element">
+                <label for="eventName">Name of event:</label>
+                <input type="text" id="eventName" class="small-textbox" required>
+            </div>
+            <div class="form-element">
+                <label for="eventAddress">Address of venue:</label>
+                <input type="text" id="eventAddress" class="small-textbox" required>
+            </div>
+		<div class="form-element">
+		    <label for="eventDateTime">Time and date of the event:</label>
+		     <div class="date-time-picker">
+    <input type="datetime-local" class="date-time-input">
+  </div>
+		</div>
+            <div class="form-element">
+                <label for="eventDescription">Event description:</label>
+                <textarea id="eventDescription" class="large-textbox" rows="25" cols="50" required></textarea>
+            </div>
+            <div class="form-element">
+                <label for="imageUpload">Image upload:</label>
+                <input type="file" id="imageUpload" accept="image/*">
+            </div>
         </div>
-
-        <div class="right-section">
-          <div class="add-item-category" id="add-item-category">
-          <label for="category-name">Category Name:</label>
-          <input type="text" id="category-name" name="category-name" />
-          <label for="number-of-items">Number of Items:</label>
-          <input type="number" id="number-of-items" name="number-of-items" />
-          <button type="button" id="add-item-button">Add Item</button>
-          </div>
-          <div id="items-summary">
-            <p>Total Number of Items: <span id="total-number-of-items"></span></p>
-          </div>
+        <div class="column-right">
+            <h2>Tickets</h2>
+            <div class="form-element">
+                <label for="ticketName1">Name of ticket 1:</label>
+                <input type="text" id="ticketName1" required>
+            </div>
+            <div class="form-element">
+                <label for="ticketQuantity1">Quantity available:</label>
+                <input type="number" id="ticketQuantity1" required>
+            </div>
+            <div class="form-element">
+                <label for="ticketPrice1">Price per ticket ($):</label>
+                <input type="number" id="ticketPrice1" required>
+            </div>
+            <div class="form-element">
+                <label for="ticketName2">Name of ticket 2:</label>
+                <input type="text" id="ticketName2" required>
+            </div>
+            <div class="form-element">
+                <label for="ticketQuantity2">Quantity available:</label>
+                <input type="number" id="ticketQuantity2" required>
+            </div>
+            <div class="form-element">
+                <label for="ticketPrice2">Price per ticket ($):</label>
+                <input type="number" id="ticketPrice2" required>
+            </div>
+            <div class="form-element">
+                <label for="ticketName3">Name of ticket 3:</label>
+                <input type="text" id="ticketName3" required>
+            </div>
+            <div class="form-element">
+                <label for="ticketQuantity3">Quantity available:</label>
+                <input type="number" id="ticketQuantity3" required>
+            </div>
+            <div class="form-element">
+                <label for="ticketPrice3">Price per ticket ($):</label>
+                <input type="number" id="ticketPrice3" required>
+            </div>
+            <div class="form-element">
+                <p>Total number of tickets available: <span id="totalTickets">0</span></p>
+                <p>Cumulative price: $<span id="cumulativePrice">0</span></p>
+            </div>
+            <div class="form-element">
+                <label>
+                    <input type="checkbox" id="acceptToS" required>
+                    I accept the ToS of using the site
+                </label>
+            </div>
+            <div class="form-element">
+                <button id="confirmButton" class="black-button">Confirm</button>
+            </div>
         </div>
     </div>
-    <div class="form-bottom-section">
-      <button type="submit">Confirm</button>
-    </div>
-  </body>
+</body>
 </html>
+
