@@ -1,7 +1,7 @@
 // JavaScript to read and process the fragment identifier
 window.addEventListener("DOMContentLoaded", function () {
   const mapContainer = document.getElementById("map");
-  console.log("map function entered");
+  //("map function entered");
   // create Leaflet map
   const map = L.map(mapContainer);
 
@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", function () {
         return response.json();
       })
       .then((jsonData) => {
-        console.log(jsonData.events[eventNumber]);
+        //console.log(jsonData.events[eventNumber]);
         const jsonDataParse = jsonData.events[eventNumber];
         //We update according to event .json
 
@@ -111,3 +111,73 @@ window.addEventListener("DOMContentLoaded", function () {
       });
   }
 });
+
+window.addEventListener("DOMContentLoaded", function () {
+  const firstTTypeMinus = document.getElementById("firstTTypeMinus");
+  const firstTTypeCnt = document.getElementById("firstTTypeCnt");
+  const firstTTypePlus = document.getElementById("firstTTypePlus");
+
+  const secondTTypeMinus = document.getElementById("secondTTypeMinus");
+  const secondTTypeCnt = document.getElementById("secondTTypeCnt");
+  const secondTTypePlus = document.getElementById("secondTTypePlus");
+
+  const thirdTTypeMinus = document.getElementById("thirdTTypeMinus");
+  const thirdTTypeCnt = document.getElementById("thirdTTypeCnt");
+  const thirdTTypePlus = document.getElementById("thirdTTypePlus");
+
+  firstTTypeMinus.addEventListener("click", function () {
+    handleButtonClick("minus", firstTTypeCnt);
+  });
+
+  firstTTypePlus.addEventListener("click", function () {
+    handleButtonClick("plus", firstTTypeCnt);
+  });
+
+  secondTTypeMinus.addEventListener("click", function () {
+    handleButtonClick("minus", secondTTypeCnt);
+  });
+
+  secondTTypePlus.addEventListener("click", function () {
+    handleButtonClick("plus", secondTTypeCnt);
+  });
+
+  thirdTTypeMinus.addEventListener("click", function () {
+    handleButtonClick("minus", thirdTTypeCnt);
+  });
+
+  thirdTTypePlus.addEventListener("click", function () {
+    handleButtonClick("plus", thirdTTypeCnt);
+  });
+
+  const goToPayment = document.getElementById("goto-payment-button");
+
+  goToPayment.addEventListener("click", function () {
+    console.log("Button clicked");
+    var fragment = window.location.hash; // Get the fragment identifier
+    fragment = fragment.substring(1);
+    var eventNumber = fragment;
+
+    window.location.href =
+      "../Payment/Payment.html" +
+      "#" +
+      eventNumber +
+      "firstTicket" +
+      firstTTypeCnt.textContent +
+      "secondTicket" +
+      secondTTypeCnt.textContent +
+      "thirdTicket" +
+      thirdTTypeCnt.textContent;
+  });
+});
+
+function handleButtonClick(action, element) {
+  let count = parseInt(element.innerText, 10);
+
+  if (action === "minus" && count > 0) {
+    count--;
+  } else if (action === "plus") {
+    count++;
+  }
+
+  element.innerText = count;
+}
