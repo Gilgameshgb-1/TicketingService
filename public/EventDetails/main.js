@@ -151,7 +151,31 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const goToPayment = document.getElementById("goto-payment-button");
 
+  let priceTOne;
+  let priceTTwo;
+  let priceTThree;
+
+  const filePath = "../database/Events/events.json";
+  fetch(filePath)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((jsonData) => {
+      var fragment = window.location.hash;
+      fragment = fragment.substring(1);
+      var eventNumber = fragment;
+      priceTOne = jsonData.events[eventNumber].tickets[0].price;
+      priceTTwo = jsonData.events[eventNumber].tickets[1].price;
+      priceTThree = jsonData.events[eventNumber].tickets[2].price;
+    });
+
   goToPayment.addEventListener("click", function () {
+    const ttype1 = document.getElementById("ticketType1");
+    const ttype2 = document.getElementById("ticketType2");
+    const ttype3 = document.getElementById("ticketType3");
     console.log("Button clicked");
     var fragment = window.location.hash; // Get the fragment identifier
     fragment = fragment.substring(1);
@@ -161,12 +185,18 @@ window.addEventListener("DOMContentLoaded", function () {
       "../Payment/Payment.html" +
       "#" +
       eventNumber +
-      "firstTicket" +
+      ttype1.textContent +
       firstTTypeCnt.textContent +
-      "secondTicket" +
+      " " +
+      priceTOne +
+      ttype2.textContent +
       secondTTypeCnt.textContent +
-      "thirdTicket" +
-      thirdTTypeCnt.textContent;
+      " " +
+      priceTTwo +
+      ttype3.textContent +
+      thirdTTypeCnt.textContent +
+      " " +
+      priceTThree;
   });
 });
 
