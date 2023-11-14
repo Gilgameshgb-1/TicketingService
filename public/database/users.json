@@ -68,5 +68,19 @@
     "email": "roo123123t@gmail.com",
     "password": "admin",
     "phone": "0603498320"
+  },
+  {
+    "name": "Faris",
+    "surname": "Bazdar",
+    "email": "root@aa.com",
+    "password": "admin",
+    "phone": "0603498320"
+  },
+  {
+    "name": "Faris",
+    "surname": "Bazdar",
+    "email": "root@a.com",
+    "password": "admin",
+    "phone": "0603498320"
   }
 ]

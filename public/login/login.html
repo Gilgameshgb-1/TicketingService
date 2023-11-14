@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Login Form</title>
+  </head>
+  <body>
+    <div class="login-form" id="loginForm">
+      <img
+        src="../GenerateQR/brand-logo.svg"
+        alt="Brand Logo"
+        class="brand-logo"
+      />
+      <form>
+        <div
+          id="emailLabel"
+          style="
+            font-family: 'Gilroy', sans-serif;
+            font-weight: bold;
+            text-align: left;
+          "
+        >
+          E-mail:
+        </div>
+        <input
+          type="text"
+          class="login-input"
+          id="Username"
+          name="Username"
+          required
+        />
+        <div
+          id="emailLabel"
+          style="
+            font-family: 'Gilroy', sans-serif;
+            font-weight: bold;
+            text-align: left;
+          "
+        >
+          Password:
+        </div>
+        <input
+          type="password"
+          class="login-input"
+          id="Password"
+          name="Password"
+          required
+        />
+        <input
+          id="submit-button"
+          class="login-button"
+          type="submit"
+          value="Login"
+        />
+      </form>
+    </div>
+  </body>
+</html>

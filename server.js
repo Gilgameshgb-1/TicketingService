@@ -48,6 +48,46 @@ app.post("/saveUserData", (req, res) => {
   }
 });
 
+app.post("/loginDataResp", (req, res) => {
+  const userData = req.body;
+  console.log(userData);
+  let users = [];
+  if (fs.existsSync("./public/database/users.json")) {
+    const existingData = fs.readFileSync("./public/database/users.json");
+    users = JSON.parse(existingData);
+  }
+
+  //Verification
+  let foundUser = null;
+
+  users.forEach((user) => {
+    if (
+      user.email === userData.Username &&
+      user.password === userData.Password
+    ) {
+      foundUser = user;
+      return;
+    }
+  });
+
+  if (foundUser) {
+    console.log("User found:", foundUser);
+  } else {
+    console.log("User not found");
+  }
+
+  if (foundUser) {
+    //Success, input current user
+    fs.writeFileSync(
+      "./public/database/currentlogin.json",
+      JSON.stringify(userData, null, 2)
+    );
+    res.send("Data saved successfully.");
+  } else {
+    res.status(400).json({ success: false, message: "User isn't registered" });
+  }
+});
+
 // Start the server
 const port = 80;
 app.listen(port, () => {
