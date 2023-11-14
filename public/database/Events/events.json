@@ -11,15 +11,18 @@
       "tickets": [
         {
           "type": "Feuer Zone",
-          "available": 50
+          "available": 50,
+          "price": 50
         },
         {
           "type": "General Admission",
-          "available": 500
+          "available": 500,
+          "price": 25
         },
         {
           "type": "VIP",
-          "available": 100
+          "available": 100,
+          "price": 100
         }
       ],
       "venueDetails": {
@@ -44,15 +47,18 @@
       "tickets": [
         {
           "type": "Seating",
-          "available": 1000
+          "available": 1000,
+          "price": 100
         },
         {
           "type": "General Admission",
-          "available": 500
+          "available": 500,
+          "price": 50
         },
         {
           "type": "VIP",
-          "available": 100
+          "available": 100,
+          "price": 250
         }
       ],
       "venueDetails": {
@@ -77,15 +83,18 @@
       "tickets": [
         {
           "type": "Seating upper floor",
-          "available": 200
+          "available": 200,
+          "price": 100
         },
         {
           "type": "General Admission",
-          "available": 100
+          "available": 100,
+          "price": 50
         },
         {
           "type": "Front seats",
-          "available": 50
+          "available": 50,
+          "price": 200
         }
       ],
       "venueDetails": {
@@ -110,15 +119,18 @@
       "tickets": [
         {
           "type": "Left Wing",
-          "available": 3500
+          "available": 3500,
+          "price": 25
         },
         {
           "type": "Right Wing",
-          "available": 3500
+          "available": 3500,
+          "price": 25
         },
         {
           "type": "Front Wing",
-          "available": 3000
+          "available": 3000,
+          "price": 50
         }
       ],
       "venueDetails": {
@@ -143,15 +155,18 @@
       "tickets": [
         {
           "type": "General Admission - Front",
-          "available": 500
+          "available": 500,
+          "price": 100
         },
         {
           "type": "General Admission - Back",
-          "available": 500
+          "available": 500,
+          "price": 100
         },
         {
           "type": "VIP",
-          "available": 100
+          "available": 100,
+          "price": 50
         }
       ],
       "venueDetails": {
@@ -176,15 +191,18 @@
       "tickets": [
         {
           "type": "Seating",
-          "available": 1000
+          "available": 1000,
+          "price": 50
         },
         {
           "type": "General Admission",
-          "available": 500
+          "available": 500,
+          "price": 100
         },
         {
           "type": "VIP",
-          "available": 100
+          "available": 100,
+          "price": 250
         }
       ],
       "venueDetails": {
@@ -209,15 +227,18 @@
       "tickets": [
         {
           "type": "General Admission - Front",
-          "available": 300
+          "available": 300,
+          "price": 100
         },
         {
           "type": "General Admission - Back",
-          "available": 300
+          "available": 300,
+          "price": 150
         },
         {
           "type": "VIP",
-          "available": 100
+          "available": 100,
+          "price": 200
         }
       ],
       "venueDetails": {
@@ -242,15 +263,18 @@
       "tickets": [
         {
           "type": "Seating",
-          "available": 1000
+          "available": 1000,
+          "price": 50
         },
         {
           "type": "General Admission",
-          "available": 500
+          "available": 500,
+          "price": 50
         },
         {
           "type": "VIP",
-          "available": 100
+          "available": 100,
+          "price": 100
         }
       ],
       "venueDetails": {
