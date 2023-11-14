@@ -187,15 +187,15 @@ window.addEventListener("DOMContentLoaded", function () {
       eventNumber +
       ttype1.textContent +
       firstTTypeCnt.textContent +
-      " " +
+      "g" +
       priceTOne +
       ttype2.textContent +
       secondTTypeCnt.textContent +
-      " " +
+      "g" +
       priceTTwo +
       ttype3.textContent +
       thirdTTypeCnt.textContent +
-      " " +
+      "g" +
       priceTThree;
   });
 });

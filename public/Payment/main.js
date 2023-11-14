@@ -126,8 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const completePurchaseButton = document.getElementById(
     "complete-purchase-button"
   );
-  const ticketList = document.getElementById("ticket-list");
-  const totalAmount = document.getElementById("total-amount");
 
   // Function to open the popup
   function openPopup() {
@@ -193,10 +191,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Add sample ticket information to the list
-  addTicketInfo("General Admission", 2, "$40.00");
-  addTicketInfo("VIP Pass", 1, "$75.00");
+  //addTicketInfo("General Admission", 2, "$40.00");
+  //addTicketInfo("VIP Pass", 1, "$75.00");
 
-  calculateTotal();
+  //calculateTotal();
 
   // Attach click event handlers
   document.getElementById("open-popup").addEventListener("click", openPopup);
@@ -216,3 +214,163 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   completePurchaseButton.addEventListener("click", completePurchase);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const url = window.location.href;
+  const hashPart = url.split("#")[1];
+
+  var match = hashPart.match(/^(\d+)/);
+
+  //Parser for URL
+  //---------------------------------------------------------------
+  // Check if a number was found
+  var eventNumber = match ? match[0] : "";
+  //console.log(eventNumber);
+  // Remove the number at the beginning of the string
+  var modifiedString = hashPart.replace(/^\d+/, "");
+
+  [ticketType1, modifiedString] = separateTicketName(modifiedString);
+  //console.log(ticketType1);
+
+  [ticketTQuant1, modifiedString] = separateTicketQuantity(modifiedString);
+  //console.log(ticketTQuant1);
+
+  [ticketTPrice1, modifiedString] = separateTicketPrice(modifiedString);
+  //console.log(ticketTPrice1);
+  //Above ok
+  //Below for second ticket
+
+  [ticketType2, modifiedString] = separateTicketName(modifiedString);
+  //console.log(ticketType2);
+
+  [ticketTQuant2, modifiedString] = separateTicketQuantity(modifiedString);
+  //console.log(ticketTQuant2);
+
+  [ticketTPrice2, modifiedString] = separateTicketPrice(modifiedString);
+  //console.log(ticketTPrice2);
+  //Above ok
+  //Below for third ticket
+  [ticketType3, modifiedString] = separateTicketName(modifiedString);
+  //console.log(ticketType3);
+
+  [ticketTQuant3, modifiedString] = separateTicketQuantity(modifiedString);
+  //console.log(ticketTQuant3);
+
+  ticketTPrice3 = separateLastTicketPrice(modifiedString);
+  //console.log(ticketTPrice3);
+  //---------------------------------------------------------------
+  const eventNum = eventNumber;
+  const ticketOne = ticketType1;
+  const ticketTwo = ticketType2;
+  const ticketThree = ticketType3;
+
+  addTicketInfo(ticketOne, ticketTQuant1, ticketTPrice1);
+  addTicketInfo(ticketTwo, ticketTQuant2, ticketTPrice2);
+  addTicketInfo(ticketThree, ticketTQuant3, ticketTPrice3);
+
+  calculateTotal();
+});
+
+const ticketList = document.getElementById("ticket-list");
+const totalAmount = document.getElementById("total-amount");
+
+// Function to add ticket information to the list
+function addTicketInfo(type, quantity, price) {
+  const listItem = document.createElement("li");
+  listItem.textContent = `${type} ${quantity} ${price}`;
+  ticketList.appendChild(listItem);
+}
+
+// Function to calculate the total amount and update the display
+function calculateTotal() {
+  console.log("Calculate Total function entered");
+  const items = ticketList.querySelectorAll("li");
+  let total = 0;
+
+  items.forEach((item) => {
+    const parts = item.textContent.split(" ");
+    console.log(parts);
+    if (parts.length == 4) {
+      total += parts[2] * parts[3];
+    } else {
+      total += parts[1] * parts[2];
+    }
+  });
+
+  totalAmount.textContent = `$${total.toFixed(2)}`;
+}
+
+function separateTicketName(modifiedString) {
+  let ticketType1 = "";
+  let slice = -1;
+
+  for (let i = 0; i < modifiedString.length; i++) {
+    if (
+      modifiedString[i] == "%" &&
+      modifiedString[i + 1] == "2" &&
+      modifiedString[i + 2] == "0"
+    ) {
+    } else if (
+      modifiedString[i - 1] == "%" &&
+      modifiedString[i] == "2" &&
+      modifiedString[i + 1] == "0"
+    ) {
+    } else if (
+      modifiedString[i - 2] == "%" &&
+      modifiedString[i - 1] == "2" &&
+      modifiedString[i] == "0"
+    ) {
+      ticketType1 += " ";
+    } else if (modifiedString[i] >= 0) {
+      slice = i;
+      break;
+    } else {
+      ticketType1 += modifiedString[i];
+    }
+  }
+  slicedString = modifiedString.slice(slice);
+  //console.log(slicedString);
+  return [ticketType1, slicedString];
+}
+
+function separateTicketQuantity(inputString) {
+  // Use regular expression to match the first number before 'g' and capture the index of 'g'
+  const regex = /(\d+)g/;
+  const match = inputString.match(regex);
+
+  // Extract the number and index from the match
+  const numberBeforeG = match ? match[1] : null;
+  const indexOfG = match ? match.index + numberBeforeG.length : null;
+
+  slicedString = inputString.slice(indexOfG);
+
+  return [numberBeforeG, slicedString];
+}
+
+function isCharNumber(char) {
+  // Use parseFloat for decimal numbers, parseInt for integers
+  return !isNaN(parseFloat(char)) && isFinite(char);
+}
+
+function separateTicketPrice(inputString) {
+  let ticketPrice1 = 0;
+  let slice = -1;
+  for (let i = 0; i < inputString.length; i++) {
+    if (inputString[i] == "g") {
+    } else if (!isCharNumber(inputString[i])) {
+      slice = i;
+      break;
+    } else {
+      ticketPrice1 = ticketPrice1 * 10 + parseInt(inputString[i]);
+    }
+  }
+
+  slicedString = inputString.slice(slice);
+  //console.log(ticketPrice1);
+  return [ticketPrice1, slicedString];
+}
+
+function separateLastTicketPrice(inputString) {
+  inputString = inputString.slice(1);
+  return parseInt(inputString);
+}
