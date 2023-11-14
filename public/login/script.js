@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const jsonData = JSON.stringify(data, null, 2);
     console.log(jsonData);
     fetch("http://localhost:80/loginDataResp", {
-      method: "POST",
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },

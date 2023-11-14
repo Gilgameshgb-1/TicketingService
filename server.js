@@ -88,6 +88,43 @@ app.post("/loginDataResp", (req, res) => {
   }
 });
 
+app.get("/readUserData", (req, res) => {
+  let loggedUser = {};
+  if (fs.existsSync("./public/database/currentlogin.json")) {
+    const loggedUserData = fs.readFileSync(
+      "./public/database/currentlogin.json"
+    );
+    loggedUser = JSON.parse(loggedUserData);
+  }
+
+  let users = [];
+  if (fs.existsSync("./public/database/users.json")) {
+    const existingData = fs.readFileSync("./public/database/users.json");
+    users = JSON.parse(existingData);
+  }
+  console.log("All the users: ", users);
+  console.log("The logged user is given as: ", loggedUser);
+  //Verification
+  let foundUser = null;
+
+  users.forEach((user) => {
+    if (
+      user.email === loggedUser.Username &&
+      user.password === loggedUser.Password
+    ) {
+      foundUser = user;
+      return;
+    }
+  });
+
+  if (foundUser) {
+    console.log("User found:", foundUser);
+    res.json(foundUser);
+  } else {
+    console.log("User not found");
+  }
+});
+
 // Start the server
 const port = 80;
 app.listen(port, () => {

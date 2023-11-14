@@ -5,7 +5,23 @@ let qr_proprietary = document.querySelector(".qr-code");
 
 document.addEventListener("DOMContentLoaded", () => {
   //console.log(document.querySelector("#input_text").value);
+  let userData = null;
+
+  fetch("http://localhost:80/readUserData", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((user) => {
+      console.log(user);
+      userData = JSON.stringify(user);
+      console.log(userData);
+    });
+
   const user_input = JSON.stringify(localStorage.getItem("formDataObject")); //document.querySelector("#input_text");
+  //const user_input = JSON.stringify()
   console.log(user_input);
   // Step 1: Remove square brackets
   const formattedData = user_input.slice(1, -1);
