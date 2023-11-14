@@ -292,6 +292,8 @@ function calculateTotal() {
     console.log(parts);
     if (parts.length == 4) {
       total += parts[2] * parts[3];
+    } else if (parts.length == 6) {
+      total += parts[4] * parts[5];
     } else {
       total += parts[1] * parts[2];
     }
