@@ -47,9 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
         userLinksContainer.innerHTML =
           '<a href="#" onclick="signOut()">Sign Out</a>';
       } else {
-        userLinksContainer.innerHTML = '<a href="login/login.html">Login</a>';
+        userLinksContainer.innerHTML =
+          '<a href="../login/login.html">Login</a>';
         userLinksContainer.innerHTML +=
-          '<a href="Registration/signup.html">Register</a>';
+          '<a href="../Registration/signup.html">Register</a>';
       }
     });
 });
