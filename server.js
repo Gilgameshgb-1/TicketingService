@@ -125,6 +125,18 @@ app.get("/readUserData", (req, res) => {
   }
 });
 
+app.post("/finishPurchase", (req, res) => {
+  const userData = req.body;
+  console.log(userData);
+
+  //Success, input current user
+  fs.writeFileSync(
+    "./public/database/finishPayment.json",
+    JSON.stringify(userData, null, 2)
+  );
+  res.send("Data saved successfully.");
+});
+
 // Start the server
 const port = 80;
 app.listen(port, () => {

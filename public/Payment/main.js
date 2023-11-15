@@ -1,3 +1,15 @@
+var eventNumber;
+var modifiedString;
+var ticketType1;
+var ticketTQuant1;
+var ticketTPrice1;
+var ticketType2;
+var ticketTQuant2;
+var ticketTPrice2;
+var ticketType3;
+var ticketTQuant3;
+var ticketTPrice3;
+
 // set timer duration in minutes
 const timerDuration = 15;
 
@@ -206,8 +218,59 @@ document.addEventListener("DOMContentLoaded", function () {
   function completePurchase() {
     // Check if card information has been inputted
     if (savedCardNumber.textContent.trim() !== "") {
-      // Redirect to the success message page (change the URL to your desired success page)
-      window.location.href = "../GenerateQR/QRgen.html";
+      //Data needed
+      /*       const url = window.location.href;
+      const hashPart = url.split("#")[1];
+
+      var match = hashPart.match(/^(\d+)/);
+
+      //Parser for URL
+      //---------------------------------------------------------------
+      var eventNumber = match ? match[0] : "";
+      var modifiedString = hashPart.replace(/^\d+/, "");
+      [ticketType1, modifiedString] = separateTicketName(modifiedString);
+      [ticketTQuant1, modifiedString] = separateTicketQuantity(modifiedString);
+      [ticketTPrice1, modifiedString] = separateTicketPrice(modifiedString);
+      [ticketType2, modifiedString] = separateTicketName(modifiedString);
+      [ticketTQuant2, modifiedString] = separateTicketQuantity(modifiedString);
+      [ticketTPrice2, modifiedString] = separateTicketPrice(modifiedString);
+      [ticketType3, modifiedString] = separateTicketName(modifiedString);
+      [ticketTQuant3, modifiedString] = separateTicketQuantity(modifiedString);
+      ticketTPrice3 = separateLastTicketPrice(modifiedString); */
+
+      //console.log(hashPart);
+
+      fetch("http://localhost:80/finishPurchase", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          eventNumber: eventNumber,
+          ticketT1: ticketType1,
+          ticketTQ1: ticketTQuant1,
+          ticketTP1: ticketTPrice1,
+          ticketT2: ticketType2,
+          ticketTQ2: ticketTQuant2,
+          ticketTP2: ticketTPrice2,
+          ticketT3: ticketType3,
+          ticketTQ3: ticketTQuant3,
+          ticketTP3: ticketTPrice3,
+        }),
+      })
+        .then((response) => {
+          //console.log(response.ok);
+          if (response.ok === false) {
+          } else {
+            alert();
+            //"Purchase successful. You will now be redirected to the reedem page for your tickets."
+            /*             setTimeout(function () {
+              window.location.href = "../GenerateQR/QRgen.html"; //Redirection without warning back to index.html
+            }, 2000); */
+          }
+        })
+        //        .then((data) => console.log(data))
+        .catch((error) => console.error("Error:", error));
     } else {
       alert("Please enter card information first.");
     }
@@ -222,42 +285,17 @@ document.addEventListener("DOMContentLoaded", function () {
   var match = hashPart.match(/^(\d+)/);
 
   //Parser for URL
-  //---------------------------------------------------------------
-  // Check if a number was found
-  var eventNumber = match ? match[0] : "";
-  //console.log(eventNumber);
-  // Remove the number at the beginning of the string
+  eventNumber = match ? match[0] : "";
   var modifiedString = hashPart.replace(/^\d+/, "");
-
   [ticketType1, modifiedString] = separateTicketName(modifiedString);
-  //console.log(ticketType1);
-
   [ticketTQuant1, modifiedString] = separateTicketQuantity(modifiedString);
-  //console.log(ticketTQuant1);
-
   [ticketTPrice1, modifiedString] = separateTicketPrice(modifiedString);
-  //console.log(ticketTPrice1);
-  //Above ok
-  //Below for second ticket
-
   [ticketType2, modifiedString] = separateTicketName(modifiedString);
-  //console.log(ticketType2);
-
   [ticketTQuant2, modifiedString] = separateTicketQuantity(modifiedString);
-  //console.log(ticketTQuant2);
-
   [ticketTPrice2, modifiedString] = separateTicketPrice(modifiedString);
-  //console.log(ticketTPrice2);
-  //Above ok
-  //Below for third ticket
   [ticketType3, modifiedString] = separateTicketName(modifiedString);
-  //console.log(ticketType3);
-
   [ticketTQuant3, modifiedString] = separateTicketQuantity(modifiedString);
-  //console.log(ticketTQuant3);
-
   ticketTPrice3 = separateLastTicketPrice(modifiedString);
-  //console.log(ticketTPrice3);
   //---------------------------------------------------------------
   const eventNum = eventNumber;
   const ticketOne = ticketType1;
@@ -267,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
   addTicketInfo(ticketOne, ticketTQuant1, ticketTPrice1);
   addTicketInfo(ticketTwo, ticketTQuant2, ticketTPrice2);
   addTicketInfo(ticketThree, ticketTQuant3, ticketTPrice3);
-  console.log(eventNum);
+  //console.log(eventNum);
 
   //Dynamic update of all info needs to be made
   const filePath = "../database/Events/events.json";
@@ -331,13 +369,13 @@ function addTicketInfo(type, quantity, price) {
 
 // Function to calculate the total amount and update the display
 function calculateTotal() {
-  console.log("Calculate Total function entered");
+  //console.log("Calculate Total function entered");
   const items = ticketList.querySelectorAll("li");
   let total = 0;
 
   items.forEach((item) => {
     const parts = item.textContent.split(" ");
-    console.log(parts);
+    //console.log(parts);
     if (parts.length == 4) {
       total += parts[2] * parts[3];
     } else if (parts.length == 6) {
