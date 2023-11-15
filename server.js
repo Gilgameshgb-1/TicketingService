@@ -69,7 +69,7 @@ app.post("/loginDataResp", (req, res) => {
       return;
     }
   });
-
+  console.log(foundUser);
   if (foundUser) {
     console.log("User found:", foundUser);
   } else {

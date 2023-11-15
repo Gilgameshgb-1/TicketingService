@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const jsonData = JSON.stringify(data, null, 2);
     console.log(jsonData);
     fetch("http://localhost:80/loginDataResp", {
-      method: "GET",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           //notificationDiv.innerText = "";
           alert(
-            "Registration successful. You will now be redirected to the homepage."
+            "Login successful. You will now be redirected to the homepage."
           );
           setTimeout(function () {
             window.location.href = "../index.html"; //Redirection without warning back to index.html
