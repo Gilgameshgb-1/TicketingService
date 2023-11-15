@@ -164,6 +164,20 @@ app.get("/readPaymentData", (req, res) => {
   res.send("Data read successfully.");
 });
 
+app.post("/logout", (req, res) => {
+  var users = {
+    Username: "null",
+    Password: "null",
+  };
+
+  fs.writeFileSync(
+    "./public/database/currentlogin.json",
+    JSON.stringify(users, null, 2)
+  );
+
+  res.send("Data saved successfully.");
+});
+
 // Start the server
 const port = 80;
 app.listen(port, () => {
