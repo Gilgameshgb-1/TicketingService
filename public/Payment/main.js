@@ -264,9 +264,9 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             alert();
             //"Purchase successful. You will now be redirected to the reedem page for your tickets."
-            /*             setTimeout(function () {
+            setTimeout(function () {
               window.location.href = "../GenerateQR/QRgen.html"; //Redirection without warning back to index.html
-            }, 2000); */
+            }, 2000);
           }
         })
         //        .then((data) => console.log(data))

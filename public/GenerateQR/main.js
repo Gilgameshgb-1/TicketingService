@@ -2,12 +2,13 @@ let btn = document.querySelector(".button");
 let qr_code_element = document.querySelector(".qr-code-png");
 let page_logo_brand = document.querySelector(".brand-logo");
 let qr_proprietary = document.querySelector(".qr-code");
+let userData = null;
+let paymentData = null;
+let finalData = null;
 
 document.addEventListener("DOMContentLoaded", () => {
   //console.log(document.querySelector("#input_text").value);
-  let userData = null;
-
-  fetch("http://localhost:80/readUserData", {
+  const fetchUserData = fetch("http://localhost:80/readUserData", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -15,43 +16,66 @@ document.addEventListener("DOMContentLoaded", () => {
   })
     .then((response) => response.json())
     .then((user) => {
-      console.log(user);
+      //console.log(user);
       userData = JSON.stringify(user);
-      console.log(userData);
+      //console.log(userData);
     });
 
-  const user_input = JSON.stringify(localStorage.getItem("formDataObject")); //document.querySelector("#input_text");
+  const fetchPaymentData = fetch("http://localhost:80/readPaymentData", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((payment) => {
+      //console.log(payment);
+      paymentData = JSON.stringify(payment);
+      //console.log(paymentData);
+    });
+
+  //const user_input = JSON.stringify(localStorage.getItem("formDataObject")); //document.querySelector("#input_text");
   //const user_input = JSON.stringify()
-  console.log(user_input);
+  //console.log(user_input);
   // Step 1: Remove square brackets
-  const formattedData = user_input.slice(1, -1);
+  Promise.all([fetchUserData, fetchPaymentData]).then(() => {
+    jsonUserData = JSON.parse(userData);
+    userData = removeNthEntry(jsonUserData, 3);
+    userData = JSON.stringify(userData);
+    //console.log(userData);
+    finalData = userData + "\n" + paymentData;
+    //console.log("String final: ", finalData);
 
-  // Step 2: Remove backslashes
-  const formattedDataWithoutQuotes = formattedData.replace(/\\"/g, "");
+    const formattedData = finalData.slice(1, -1);
+    //console.log(formattedData);
 
-  // Step 3: Replace commas with newlines
-  const finalFormattedData = formattedDataWithoutQuotes.replace(/,/g, "\n");
+    // Step 2: Remove backslashes
+    const formattedDataWithoutQuotes = formattedData.replace(/\\"/g, "");
 
-  console.log(finalFormattedData);
+    // Step 3: Replace commas with newlines
+    const finalFormattedData = formattedDataWithoutQuotes.replace(/,/g, "\n");
 
-  if (user_input != "") {
-    if (qr_code_element.childElementCount == 0) {
-      generate(finalFormattedData);
+    //console.log(finalFormattedData);
+
+    if (finalData != "") {
+      if (qr_code_element.childElementCount == 0) {
+        generate(finalFormattedData);
+      } else {
+        qr_code_element.innerHTML = "";
+        generate(finalFormattedData);
+      }
     } else {
-      qr_code_element.innerHTML = "";
-      generate(finalFormattedData);
+      console.log("not valid input");
+      qr_code_element.style = "display: none";
     }
-  } else {
-    console.log("not valid input");
-    qr_code_element.style = "display: none";
-  }
+  });
 });
 
-function generate(user_input) {
+function generate(finalData) {
   qr_code_element.style = "";
 
   var qrcode = new QRCode(qr_code_element, {
-    text: `${user_input}`,
+    text: `${finalData}`,
     width: 180, //128
     height: 180,
     colorDark: "#000000",
@@ -96,7 +120,7 @@ function generate(user_input) {
   qr_proprietary.appendChild(downloadPdfButton);
 
   downloadPdfButton.addEventListener("click", function () {
-    console.log("Not fully functional yet!");
+    //console.log("Not fully functional yet!");
     window.jsPDF = window.jspdf.jsPDF;
     const doc = new jsPDF();
 
@@ -118,18 +142,40 @@ function generate(user_input) {
 
     // Picking up data, writing in .pdf ticket
 
-    const user_input = JSON.parse(localStorage.getItem("formDataObject")); //document.querySelector("#input_text");
+    //const finalData = ; //document.querySelector("#input_text");
+    //console.log();
+    finalData = JSON.parse(JSON.stringify(finalData));
+    let arrOfStrings = [];
+    let tmpStr = "";
+    for (let i = 0; i < finalData.length; i++) {
+      if (finalData[i] != "\n") {
+        tmpStr += finalData[i];
+      } else {
+        //console.log(tmpStr);
+        arrOfStrings.push(tmpStr);
+        tmpStr = "";
+      }
+    }
+
+    let updatedArrOfStrings = [];
+    for (let i = 0; i < arrOfStrings.length; i++) {
+      let part = arrOfStrings[i].split(":");
+      //console.log(part[1]);
+      if (i === 3) {
+        //part = part.replace("}", "");
+      }
+      updatedArrOfStrings.push(part[1]);
+    }
+    console.log(updatedArrOfStrings);
 
     arrOfInfo = [
-      user_input[0],
-      user_input[1],
-      user_input[2],
-      user_input[3] + " " + user_input[4],
-      user_input[5],
-      user_input[6],
-      user_input[7],
-      user_input[8],
-      user_input[9],
+      updatedArrOfStrings[0],
+      updatedArrOfStrings[1],
+      "TmpLocation",
+      "TmpEventName",
+      updatedArrOfStrings[5] + " " + updatedArrOfStrings[6],
+      updatedArrOfStrings[8] + " " + updatedArrOfStrings[9],
+      updatedArrOfStrings[11] + " " + updatedArrOfStrings[12],
     ];
 
     doc.setFont("Helvetica", "normal");
@@ -139,23 +185,30 @@ function generate(user_input) {
       "Name: ",
       "Surname: ",
       "Location: ",
-      "Time and Date: ",
-      "Address: ",
-      "User ID: ",
-      "paidAmount: ",
-      "paymentType: ",
-      "transactionNumber: ",
+      "Event name: ",
+      "Ticket type/Quantity: ",
+      "Ticket type/Quantity: ",
+      "Ticket type/Quantity: ",
     ];
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 7; i++) {
+      console.log(arrOfFields[i] + arrOfInfo[i]);
       doc.text(arrOfFields[i] + arrOfInfo[i], 10, 100 + i * 5);
     }
 
-    // Set the font and size for the information details
-    /*     doc.setFont("Helvetica", "normal");
-    doc.setFontSize(12);
-    doc.text(infoDetails, 10, 130); */
-
     const name = doc.save("qr_code.pdf");
   });
+}
+
+function removeNthEntry(userData, n) {
+  const userDataArray = Object.entries(userData);
+
+  if (n >= 0 && n < userDataArray.length) {
+    userDataArray.splice(n, 1);
+  } else {
+    console.error("Invalid index:", n);
+    return userData; // Return the original userData if the index is invalid
+  }
+
+  return Object.fromEntries(userDataArray);
 }

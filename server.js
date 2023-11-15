@@ -137,6 +137,16 @@ app.post("/finishPurchase", (req, res) => {
   res.send("Data saved successfully.");
 });
 
+app.get("/readPaymentData", (req, res) => {
+  let pData = null;
+  if (fs.existsSync("./public/database/finishPayment.json")) {
+    const paymentData = fs.readFileSync("./public/database/finishPayment.json");
+    pData = JSON.parse(paymentData);
+  }
+  res.json(pData);
+  res.send("Data read successfully.");
+});
+
 // Start the server
 const port = 80;
 app.listen(port, () => {
