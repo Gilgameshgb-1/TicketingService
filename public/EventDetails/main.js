@@ -174,6 +174,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   goToPayment.addEventListener("click", function () {
     let flag = false;
+    let cnt = 0;
     //Verify existing login
     const filePath = "../database/currentlogin.json";
     fetch(filePath)
@@ -189,11 +190,17 @@ window.addEventListener("DOMContentLoaded", function () {
           console.log("User is not logged in");
           flag = false;
           alert("Please go back to home page and log in to purchase tickets!");
+          return;
         } else {
           console.log("User is logged in!");
           flag = true;
+          cnt =
+            parseInt(document.getElementById("firstTTypeCnt").textContent) +
+            parseInt(document.getElementById("secondTTypeCnt").textContent) +
+            parseInt(document.getElementById("thirdTTypeCnt").textContent);
+          //console.log(cnt);
         }
-        if (flag === true) {
+        if (flag === true && cnt > 0) {
           const ttype1 = document.getElementById("ticketType1");
           const ttype2 = document.getElementById("ticketType2");
           const ttype3 = document.getElementById("ticketType3");
@@ -218,6 +225,11 @@ window.addEventListener("DOMContentLoaded", function () {
             thirdTTypeCnt.textContent +
             "g" +
             priceTThree;
+        } else {
+          alert(
+            "Please select the number of tickets you want to buy. 0 is not valid!"
+          );
+          return;
         }
       });
   });
