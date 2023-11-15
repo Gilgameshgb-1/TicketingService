@@ -173,30 +173,53 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
   goToPayment.addEventListener("click", function () {
-    const ttype1 = document.getElementById("ticketType1");
-    const ttype2 = document.getElementById("ticketType2");
-    const ttype3 = document.getElementById("ticketType3");
-    console.log("Button clicked");
-    var fragment = window.location.hash; // Get the fragment identifier
-    fragment = fragment.substring(1);
-    var eventNumber = fragment;
+    let flag = false;
+    //Verify existing login
+    const filePath = "../database/currentlogin.json";
+    fetch(filePath)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // 'data' will be either true or false
+        if (data.Username == "null" && data.Password == "null") {
+          console.log("User is not logged in");
+          flag = false;
+          alert("Please go back to home page and log in to purchase tickets!");
+        } else {
+          console.log("User is logged in!");
+          flag = true;
+        }
+        if (flag === true) {
+          const ttype1 = document.getElementById("ticketType1");
+          const ttype2 = document.getElementById("ticketType2");
+          const ttype3 = document.getElementById("ticketType3");
+          console.log("Button clicked");
+          var fragment = window.location.hash; // Get the fragment identifier
+          fragment = fragment.substring(1);
+          var eventNumber = fragment;
 
-    window.location.href =
-      "../Payment/Payment.html" +
-      "#" +
-      eventNumber +
-      ttype1.textContent +
-      firstTTypeCnt.textContent +
-      "g" +
-      priceTOne +
-      ttype2.textContent +
-      secondTTypeCnt.textContent +
-      "g" +
-      priceTTwo +
-      ttype3.textContent +
-      thirdTTypeCnt.textContent +
-      "g" +
-      priceTThree;
+          window.location.href =
+            "../Payment/Payment.html" +
+            "#" +
+            eventNumber +
+            ttype1.textContent +
+            firstTTypeCnt.textContent +
+            "g" +
+            priceTOne +
+            ttype2.textContent +
+            secondTTypeCnt.textContent +
+            "g" +
+            priceTTwo +
+            ttype3.textContent +
+            thirdTTypeCnt.textContent +
+            "g" +
+            priceTThree;
+        }
+      });
   });
 });
 

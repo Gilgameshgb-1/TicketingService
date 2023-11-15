@@ -125,6 +125,23 @@ app.get("/readUserData", (req, res) => {
   }
 });
 
+app.get("/getLoginStatus", (req, res) => {
+  console.log("Entered functino for retrieving login status!");
+  let loggedUser = {};
+  if (fs.existsSync("./public/database/currentlogin.json")) {
+    const loggedUserData = fs.readFileSync(
+      "./public/database/currentlogin.json"
+    );
+    loggedUser = JSON.parse(loggedUserData);
+  }
+  console.log(loggedUser);
+  if (loggedUser.Username == "null" && loggedUser.Password == "null") {
+    res.send(false);
+  } else {
+    res.send(true);
+  }
+});
+
 app.post("/finishPurchase", (req, res) => {
   const userData = req.body;
   console.log(userData);

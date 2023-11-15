@@ -82,5 +82,19 @@
     "email": "root@a.com",
     "password": "admin",
     "phone": "0603498320"
+  },
+  {
+    "name": "Faris",
+    "surname": "Bazdar",
+    "email": "rooter@gmail.com",
+    "password": "admin",
+    "phone": "0603498320"
+  },
+  {
+    "name": "Faris",
+    "surname": "Bazdar",
+    "email": "root1111@gmail.com",
+    "password": "admin",
+    "phone": "0603498320"
   }
 ]
