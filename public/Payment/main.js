@@ -42,7 +42,7 @@ function updateTimer() {
   timeRemainingString += secondsRemaining;
 
   // update timer display
-  timerDisplay.innerHTML = "Preostalo vrijeme: " + timeRemainingString;
+  timerDisplay.innerHTML = "Remaining time: " + timeRemainingString;
 
   // update progress bar width
   const progressBarWidth =
@@ -267,6 +267,54 @@ document.addEventListener("DOMContentLoaded", function () {
   addTicketInfo(ticketOne, ticketTQuant1, ticketTPrice1);
   addTicketInfo(ticketTwo, ticketTQuant2, ticketTPrice2);
   addTicketInfo(ticketThree, ticketTQuant3, ticketTPrice3);
+  console.log(eventNum);
+
+  //Dynamic update of all info needs to be made
+  const filePath = "../database/Events/events.json";
+
+  fetch(filePath)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((jsonData) => {
+      //console.log(jsonData.events[eventNumber]);
+      const jsonDataParse = jsonData.events[eventNumber];
+      //We update according to event .json
+
+      //Update of image
+      const imgUrl = "../database/Events/" + jsonDataParse.eventNumber + ".jpg";
+      const imgElement = document.getElementById("dynamicImage");
+      imgElement.src = imgUrl;
+
+      //Update of event name
+      const eventTitle = document.getElementById("eventTitle");
+      eventTitle.textContent = jsonDataParse.concertName;
+
+      //Update of map parameters
+      const lat = jsonDataParse.location.latitude;
+      const long = jsonDataParse.location.longitude;
+
+      map.setView([lat, long], 15);
+
+      var markerCoordinates = [lat, long];
+      var marker = L.marker(markerCoordinates).addTo(map);
+      marker.bindPopup(jsonDataParse.venueDetails.name).openPopup();
+
+      //Update of date, time and venue name
+      const eventDetails = document.getElementById("eventDetails");
+      const venueName = jsonDataParse.venueDetails.name;
+      const dateOfEvent = jsonDataParse.date;
+      const timeOfEvent =
+        jsonDataParse.startTime.hours +
+        ":" +
+        jsonDataParse.startTime.minutes +
+        "h";
+      eventDetails.textContent =
+        dateOfEvent + ", " + timeOfEvent + ", " + venueName;
+    });
 
   calculateTotal();
 });
@@ -294,6 +342,8 @@ function calculateTotal() {
       total += parts[2] * parts[3];
     } else if (parts.length == 6) {
       total += parts[4] * parts[5];
+    } else if (parts.length == 5) {
+      total += parts[3] * parts[4];
     } else {
       total += parts[1] * parts[2];
     }

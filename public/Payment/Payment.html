@@ -23,7 +23,7 @@
   <body>
     <nav>
       <a href="#" class="title">Events.ba</a>
-      <a href="#">Concerts</a>
+      <a href="../Concerts/concert.html">Concerts</a>
       <a href="#">Sports</a>
       <div class="dropdown">
         <button class="dropbtn">
@@ -86,10 +86,15 @@
         </button>
       </div>
       <div class="right-section">
-        <h1 class="event-name">Rammstein koncert</h1>
-        <p class="event-details">13.01.2024, 20:00h, Arena Zetra</p>
+        <h1 id="eventTitle" class="event-name"></h1>
+        <p id="eventDetails" class="event-details"></p>
         <div>
-          <img src="venue2.jpg" alt="Scaled Image" class="scaled-image" />
+          <img
+            id="dynamicImage"
+            src=""
+            alt="Scaled Image"
+            class="scaled-image"
+          />
         </div>
         <div id="map">Map</div>
       </div>
